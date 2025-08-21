@@ -329,6 +329,10 @@
         <img src="./logo/laglead.png" alt="laglead">
         <div class="meta"><div class="title">laglead</div><div class="hint">Dynamic lead/lag value access</div></div>
       </div>
+      <div class="logo" data-key="ctcae5_grader">
+        <img src="./logo/ctcae5_grader.png" alt="ctcae5_grader">
+        <div class="meta"><div class="title">ctcae5_grader</div><div class="hint">CTCAE Grader</div></div>
+      </div>
       <div class="logo" data-key="forest_navigator">
         <img src="./logo/forest_navigator.png" alt="forest_navigator">
         <div class="meta"><div class="title">Dr. Forest, Morio</div><div class="hint">Navigater of PharmaForest</div></div>
@@ -560,6 +564,18 @@
       badges: ["lag","lead","Data Utility","MIT"],
       links: [{text:"laglead", href:"https://github.com/PharmaForest/laglead"},{text:"Ask Dr.Forest", href:"https://chatgpt.com/g/g-6881d98193ec8191abb19e4e920cb64c-dr-forest"}]
     },
+    ctcae5_grader: {
+      title: "CTCAE5_grader",
+      img: "./logo/ctcae5_grader.png",
+      summary: "ctcae5_grader is a SAS macro package that automates the grading of laboratory tests according to CTCAE v5.0. It standardises grading rules for common laboratory parameters (e.g. haematology, biochemistry, electrolytes) and provides character and numeric grade outputs.",
+      license: "MIT",
+      authors: ["Yutaka Morioka"],
+      maintainers: ["Yutaka Morioka"],
+      features: ["CTCAE", "Grading"],
+      macros: ["%CTCAE_XXX() [e.g. %CTCAE_ALT()]"],
+      badges: ["CTCAE","grading","Data Utility","MIT"],
+      links: [{text:"ctcae5_grader", href:"https://github.com/PharmaForest/ctcae5_grader"},{text:"Ask Dr.Forest", href:"https://chatgpt.com/g/g-6881d98193ec8191abb19e4e920cb64c-dr-forest"}]
+    },
     forest_navigator: {
       title: "Dr. Forest, Morio",
       img: "./logo/forest_navigator.png",
@@ -618,7 +634,8 @@ const layoutMap = {
   vis_review_kit:   {x: 470, y: 300, scale: 0.6},
 
   maxims4sas:       {x: 97, y: 400, scale: 0.6},
-  laglead:          {x: 205, y: 400, scale: 0.6}
+  laglead:          {x: 205, y: 400, scale: 0.6},
+  ctcae5_grader:    {x: 315, y: 399, scale: 0.6}
 };
 
 function buildFreeBoard(itemsObj){
