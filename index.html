@@ -333,6 +333,10 @@
         <img src="./logo/ctcae5_grader.png" alt="ctcae5_grader">
         <div class="meta"><div class="title">ctcae5_grader</div><div class="hint">CTCAE Grader</div></div>
       </div>
+      <div class="logo" data-key="love_matrix">
+        <img src="./logo/love_matrix.png" alt="love_matrix">
+        <div class="meta"><div class="title">Love Matrix</div><div class="hint">Loving matrix via FCMP</div></div>
+      </div>
       <div class="logo" data-key="forest_navigator">
         <img src="./logo/forest_navigator.png" alt="forest_navigator">
         <div class="meta"><div class="title">Dr. Forest, Morio</div><div class="hint">Navigater of PharmaForest</div></div>
@@ -353,9 +357,9 @@
       img: "./logo/pharmaforest.png",
       desc: 
       `
-      A collaborative repository of SAS packages for the pharmaceutical space, powered by PHUSE Japan OST (Open Source Technology) WG members—Hiroki Yamanobe, Yutaka Morioka, and Ryo Nakaya—showcasing the list of available packages. 
+      A collaborative repository of SAS packages for pharmaceutical industry, powered by PHUSE Japan OST (Open Source Technology) WG members—Hiroki Yamanobe, Yutaka Morioka, and Ryo Nakaya—showcasing the list of available packages. 
 
-      <br><br> PharmaForest is built on top of SAS Packages framework(SPF), which was developed by Bartosz Jablonski. There are more packages in his repository SAS Packages Archive(SASPAC).<br><br>
+      <br><br> PharmaForest is built on top of SAS Packages Framework(SPF), which was developed by Bartosz Jablonski. There are more packages in his repository SAS Packages Archive(SASPAC).<br><br>
       `,
       badges: ["SAS Packages","Repository","Open-Source","MIT"],
       links: [{text:"PharmaForest", href:"https://github.com/PharmaForest"}, {text:"SPF", href:"https://github.com/yabwon/SAS_PACKAGES"},{text:"SASPAC", href:"https://github.com/SASPAC"}]
@@ -576,6 +580,18 @@
       badges: ["CTCAE","grading","Data Utility","MIT"],
       links: [{text:"ctcae5_grader", href:"https://github.com/PharmaForest/ctcae5_grader"},{text:"Ask Dr.Forest", href:"https://chatgpt.com/g/g-6881d98193ec8191abb19e4e920cb64c-dr-forest"}]
     },
+    love_matrix: {
+      title: "Love_Matrix",
+      img: "./logo/love_matrix.png",
+      summary: "Love_Matrix is a SAS macro toolkit for basic matrix operations (multiply, inverse, determinant, Cholesky, etc.) — works with PROC FCMP, no SAS/IML required.",
+      license: "MIT",
+      authors: ["Yutaka Morioka"],
+      maintainers: ["Yutaka Morioka"],
+      features: ["matrix", "operations"],
+      macros: ["%matrix_mult(), %matrix_inverse(), %matrix_identity(), %matrix_determinant(), %matrix_transpose(), %matrix_cholesky_decomposition()"],
+      badges: ["matrix","love","Data Utility","MIT"],
+      links: [{text:"love_matrix", href:"https://github.com/PharmaForest/love_matrix"},{text:"Ask Dr.Forest", href:"https://chatgpt.com/g/g-6881d98193ec8191abb19e4e920cb64c-dr-forest"}]
+    },
     forest_navigator: {
       title: "Dr. Forest, Morio",
       img: "./logo/forest_navigator.png",
@@ -635,7 +651,8 @@ const layoutMap = {
 
   maxims4sas:       {x: 97, y: 400, scale: 0.6},
   laglead:          {x: 205, y: 400, scale: 0.6},
-  ctcae5_grader:    {x: 315, y: 399, scale: 0.6}
+  ctcae5_grader:    {x: 315, y: 399, scale: 0.6},
+  love_matrix:      {x: 425, y: 400, scale: 0.6}
 };
 
 function buildFreeBoard(itemsObj){
