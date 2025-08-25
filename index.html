@@ -337,6 +337,10 @@
         <img src="./logo/love_matrix.png" alt="love_matrix">
         <div class="meta"><div class="title">Love Matrix</div><div class="hint">Loving matrix via FCMP</div></div>
       </div>
+      <div class="logo" data-key="SASPACerShiny">
+        <img src="./logo/SASPACerShiny.png" alt="SASPACerShiny">
+        <div class="meta"><div class="title">SASPACerShiny</div><div class="hint">Shiny App of SASPACer</div></div>
+      </div>
       <div class="logo" data-key="forest_navigator">
         <img src="./logo/forest_navigator.png" alt="forest_navigator">
         <div class="meta"><div class="title">Dr. Forest, Morio</div><div class="hint">Navigater of PharmaForest</div></div>
@@ -592,6 +596,18 @@
       badges: ["matrix","love","Data Utility","MIT"],
       links: [{text:"love_matrix", href:"https://github.com/PharmaForest/love_matrix"},{text:"Ask Dr.Forest", href:"https://chatgpt.com/g/g-6881d98193ec8191abb19e4e920cb64c-dr-forest"}]
     },
+    SASPACerShiny: {
+      title: "SASPACerShiny",
+      img: "./logo/SASPACerShiny.png",
+      summary: "サスパッカー in the logo stands for SASPACer in Japanese. Original SASPACer is a SAS package to support creating SAS packages. SASPACer Shiny is an R shiny application with the same purpose. By providing GUI interface, SASPACer Shiny supports R users to create SAS packages. Once SAS package source folder/file structure is done by SASPACer Shiny, users should run %generatePackage() in SAS Package Framework(SPF) using SAS to complete creating SAS packages. By the way, original SASPACer is suite tool until completion of creating SAS packages.",
+      license: "MIT",
+      authors: ["Ryo Nakaya"],
+      maintainers: ["Ryo Nakaya"],
+      features: ["SAS Packages"],
+      macros: ["Not Applicable (SASPACerShiny::run_app())"],
+      badges: ["SAS Packages","R", "Shiny", "Other","MIT"],
+      links: [{text:"SASPACerShiny", href:"https://github.com/PharmaForest/SASPACerShiny"},{text:"Ask Dr.Forest", href:"https://chatgpt.com/g/g-6881d98193ec8191abb19e4e920cb64c-dr-forest"}]
+    },
     forest_navigator: {
       title: "Dr. Forest, Morio",
       img: "./logo/forest_navigator.png",
@@ -652,7 +668,8 @@ const layoutMap = {
   maxims4sas:       {x: 97, y: 400, scale: 0.6},
   laglead:          {x: 205, y: 400, scale: 0.6},
   ctcae5_grader:    {x: 315, y: 399, scale: 0.6},
-  love_matrix:      {x: 425, y: 400, scale: 0.6}
+  love_matrix:      {x: 425, y: 400, scale: 0.6},
+  SASPACerShiny:    {x: 530, y: 400, scale: 0.6}
 };
 
 function buildFreeBoard(itemsObj){
