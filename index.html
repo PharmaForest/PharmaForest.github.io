@@ -341,6 +341,10 @@
         <img src="./logo/SASPACerShiny.png" alt="SASPACerShiny">
         <div class="meta"><div class="title">SASPACerShiny</div><div class="hint">Shiny App of SASPACer</div></div>
       </div>
+      <div class="logo" data-key="change_tracer_dog">
+        <img src="./logo/change_tracer_dog.png" alt="change_tracer_dog">
+        <div class="meta"><div class="title">Change Tracer Dog</div><div class="hint">Change Tracer Macros</div></div>
+      </div>
       <div class="logo" data-key="forest_navigator">
         <img src="./logo/forest_navigator.png" alt="forest_navigator">
         <div class="meta"><div class="title">Dr. Forest, Morio</div><div class="hint">Master Navigator of PharmaForest</div></div>
@@ -612,6 +616,18 @@
       badges: ["SAS Packages","R", "Shiny", "Other","MIT"],
       links: [{text:"SASPACerShiny", href:"https://github.com/PharmaForest/SASPACerShiny"},{text:"Ask Dr.Forest", href:"https://chatgpt.com/g/g-6881d98193ec8191abb19e4e920cb64c-dr-forest"}]
     },
+    change_tracer_dog: {
+      title: "Change Tracer Dog",
+      img: "./logo/change_tracer_dog.png",
+      summary: "Change Tracer Dog is a SAS macro package that behaves like a police dog: tracing dataset changes, sniffing out differences, and stopping patrol when the mission is complete.",
+      license: "MIT",
+      authors: ["Yutaka Morioka"],
+      maintainers: ["Yutaka Morioka"],
+      features: ["Tracing dataset changes"],
+      macros: ["%dog_patrol(), <br>%sniffer_compare(), <br>%patrol_end(), <br>%dog_chatter()"],
+      badges: ["tracer","datasets", "change", "dog", "Checker","MIT"],
+      links: [{text:"change_tracer_dog", href:"https://github.com/PharmaForest/change_tracer_dog"},{text:"Ask Dr.Forest", href:"https://chatgpt.com/g/g-6881d98193ec8191abb19e4e920cb64c-dr-forest"}]
+    },
     forest_navigator: {
       title: "Dr. Forest, Morio",
       img: "./logo/forest_navigator.png",
@@ -682,7 +698,9 @@ const layoutMap = {
   laglead:          {x: 205, y: 400, scale: 0.6},
   ctcae5_grader:    {x: 315, y: 399, scale: 0.6},
   love_matrix:      {x: 425, y: 400, scale: 0.6},
-  SASPACerShiny:    {x: 530, y: 400, scale: 0.6}
+  SASPACerShiny:    {x: 530, y: 400, scale: 0.6},
+
+  change_tracer_dog: {x: 40, y: 490, scale: 0.61}
 };
 
 function buildFreeBoard(itemsObj){
