@@ -345,6 +345,10 @@
         <img src="./logo/change_tracer_dog.png" alt="change_tracer_dog">
         <div class="meta"><div class="title">Change Tracer Dog</div><div class="hint">Change Tracer Macros</div></div>
       </div>
+      <div class="logo" data-key="yaml_writer">
+        <img src="./logo/yaml_writer.png" alt="yaml_writer">
+        <div class="meta"><div class="title">YAML Writer</div><div class="hint">YAML Generation Tool</div></div>
+      </div>
       <div class="logo" data-key="forest_navigator">
         <img src="./logo/forest_navigator.png" alt="forest_navigator">
         <div class="meta"><div class="title">Dr. Forest, Morio</div><div class="hint">Master Navigator of PharmaForest</div></div>
@@ -628,6 +632,18 @@
       badges: ["tracer","datasets", "change", "dog", "Checker","MIT"],
       links: [{text:"change_tracer_dog", href:"https://github.com/PharmaForest/change_tracer_dog"},{text:"Ask Dr.Forest", href:"https://chatgpt.com/g/g-6881d98193ec8191abb19e4e920cb64c-dr-forest"}]
     },
+    yaml_writer: {
+      title: "YAML Writer",
+      img: "./logo/yaml_writer.png",
+      summary: "A lightweight SAS macro package to generate YAML files directly from SAS. It lets you: - Start and end YAML output streams, - Export datasets into YAML (mapping, sequence, mappingsequence), - Build nested or inline structures. Write YAML directly between %yaml_start and %yaml_end, use &nw. for line breaks, and %dataset_export / %nest / %inline_nest for structured output.",
+      license: "MIT",
+      authors: ["Yutaka Morioka"],
+      maintainers: ["Yutaka Morioka"],
+      features: ["writing YAML"],
+      macros: ["%yaml_start(), <br>%yaml_end(), <br>%dataset_export(), <br>%nest(), <br>%inline_nest()"],
+      badges: ["yaml", "Other","MIT"],
+      links: [{text:"yaml_writer", href:"https://github.com/PharmaForest/yaml_writer"},{text:"Ask Dr.Forest", href:"https://chatgpt.com/g/g-6881d98193ec8191abb19e4e920cb64c-dr-forest"}]
+    },
     forest_navigator: {
       title: "Dr. Forest, Morio",
       img: "./logo/forest_navigator.png",
@@ -700,7 +716,8 @@ const layoutMap = {
   love_matrix:      {x: 425, y: 400, scale: 0.6},
   SASPACerShiny:    {x: 530, y: 400, scale: 0.6},
 
-  change_tracer_dog: {x: 40, y: 490, scale: 0.61}
+  change_tracer_dog: {x: 40, y: 490, scale: 0.61},
+  yaml_writer:      {x: 150, y: 490, scale: 0.6}
 };
 
 function buildFreeBoard(itemsObj){
