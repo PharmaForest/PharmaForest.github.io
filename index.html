@@ -106,6 +106,27 @@
       display:inline-flex; align-items:center; gap:8px;
     }
     .btn:hover{ background:#23232a; }
+  
+    /* 右上固定のカウンターボックス */
+    .counter-widget{
+      position:absolute;
+      top:12px;
+      right:12px;
+      z-index:50;
+      background: rgba(20,20,24,.6);
+      border:1px solid #2b2b2f;
+      border-radius:12px;
+      padding:6px 8px;
+      backdrop-filter: blur(6px);
+    }
+    .counter-widget img{
+      display:block;
+      margin:0;
+      padding:0;
+      border:0;
+      vertical-align:bottom;
+    }
+
     /* レスポンシブ（幅が狭い時は縦積み） */
     /* タブレット以下は縦積みレイアウトにする */
     @media (max-width: 980px){
@@ -857,6 +878,7 @@ function attachCategoryRadios(){
       right.innerHTML = buildFreeBoard(items);
       attachHoneycombHover();
       attachCategoryRadios(); 
+      addCounter();
       return;
     }
 
@@ -890,6 +912,7 @@ function attachCategoryRadios(){
         </div>
       </section>`;
     right.innerHTML = panelHTML;
+    addCounter();
   }
 
   // 左の要素クリックで選択＆右更新、中央にスクロール
@@ -921,10 +944,39 @@ cards.forEach(card => {
 
   // 初期選択
   (function init(){
-
+    addCounter();
   })();
+
+  // カウンター追加
+function addCounter(){
+  const host = document.querySelector('.right'); // 右パネル
+  if (!host) return;
+
+  // 二重追加防止
+  if (host.querySelector('.counter-widget')) return;
+
+  const box = document.createElement('div');
+  box.className = 'counter-widget';
+
+  // Rays Counter の配布タグを文字列で入れる（改変・改行しない）
+  box.innerHTML = `
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td align="center">
+          <a href="http://www.rays-counter.com/">
+            <img src="http://www.rays-counter.com/d1301_f6_022/68b8464b2a108/"
+                 alt="アクセスカウンター" border="0">
+          </a>
+        </td>
+      </tr>
+    </table>
+  `;
+
+  host.appendChild(box);
+}
 
 
 </script>
+
 </body>
 </html>
