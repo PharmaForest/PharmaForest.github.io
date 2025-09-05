@@ -378,6 +378,10 @@
         <img src="./logo/RWDExpress.png" alt="RWDExpress">
         <div class="meta"><div class="title">RWD Express</div><div class="hint">RWD handling toolkit</div></div>
       </div>
+      <div class="logo" data-key="freqsum">
+        <img src="./logo/freqsum.png" alt="freqsum">
+        <div class="meta"><div class="title">freqsum</div><div class="hint">Frequency and Summary Tool</div></div>
+      </div>
       <div class="logo" data-key="forest_navigator">
         <img src="./logo/forest_navigator.png" alt="forest_navigator">
         <div class="meta"><div class="title">Dr. Forest, Morio</div><div class="hint">Master Navigator of PharmaForest</div></div>
@@ -697,6 +701,18 @@
       badges: ["RWD", "Big Data", "Data Utility","MIT"],
       links: [{text:"RWDExpress", href:"https://github.com/PharmaForest/RWDExpress"},{text:"Ask Dr.Forest", href:"https://chatgpt.com/g/g-6881d98193ec8191abb19e4e920cb64c-dr-forest"}]
     },
+    freqsum: {
+      title: "freqsum",
+      img: "./logo/freqsum.png",
+      summary: "This package allows you to easily perform frequency tabulations and summary statistics.",
+      license: "MIT",
+      authors: ["Hiroki Yamanobe"],
+      maintainers: ["Hiroki Yamanobe"],
+      features: ["Frequency tabulations", "Summary statistics"],
+      macros: ["%freqStat(), <br>%summaryStat()"],
+      badges: ["Frequency","Summary","Output/Visualization","MIT"],
+      links: [{text:"freqsum", href:"https://github.com/PharmaForest/freqsum"},{text:"Ask Dr.Forest", href:"https://chatgpt.com/g/g-6881d98193ec8191abb19e4e920cb64c-dr-forest"}]
+    },
     forest_navigator: {
       title: "Dr. Forest, Morio",
       img: "./logo/forest_navigator.png",
@@ -766,13 +782,14 @@ const layoutMap = {
   maxims4sas:       {x: 97, y: 400, scale: 0.6},
   laglead:          {x: 205, y: 400, scale: 0.6},
   ctcae5_grader:    {x: 315, y: 399, scale: 0.6},
-  love_matrix:      {x: 425, y: 400, scale: 0.6},
+  love_matrix:      {x: 422, y: 400, scale: 0.56},
   SASPACerShiny:    {x: 530, y: 400, scale: 0.6},
 
   change_tracer_dog: {x: 40, y: 490, scale: 0.61},
   yaml_writer:      {x: 150, y: 490, scale: 0.6},
   adamski:          {x: 260, y: 490, scale: 0.6},
   RWDExpress:       {x: 370, y: 493, scale: 0.6},
+  freqsum:          {x: 475, y: 490, scale: 0.6},
 };
 
 function buildFreeBoard(itemsObj){
