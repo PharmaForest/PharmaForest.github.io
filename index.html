@@ -131,7 +131,7 @@
     /* タブレット以下は縦積みレイアウトにする */
     @media (max-width: 980px){
       .layout{
-        flex-direction: column;      /* ← これが肝！ */
+        flex-direction: column;      
         height: 100dvh;              /* モバイルのURLバー対策 */
         min-height: 100vh;           /* 古端末フォールバック */
       }
@@ -282,6 +282,13 @@
           <div class="hint">Package Repository</div>
         </div>
       </div>
+      <div class="logo" data-key="forester">
+        <img src="./logo/squirrel.png" alt="Forester">
+        <div class="meta">
+          <div class="title">Forester</div>
+          <div class="hint">Contributors</div>
+        </div>
+      </div>
       <div class="logo" data-key="oncoplotter">
         <img src="./logo/oncoplotter.png" alt="OncoPlotter">
         <div class="meta"><div class="title">OncoPlotter</div><div class="hint">Plot Tools for Oncology Area</div></div>
@@ -421,6 +428,27 @@
       A collaborative repository of SAS packages for pharmaceutical industry, powered by PHUSE Japan OST (Open Source Technology) WG members—Hiroki Yamanobe, Yutaka Morioka, and Ryo Nakaya—showcasing the list of available packages. 
 
       <br><br> PharmaForest is built on top of SAS Packages Framework(SPF), which was developed by Bartosz Jablonski. There are more packages in his repository SAS Packages Archive(SASPAC).<br><br>
+      `,
+      badges: ["SAS Packages","Repository","Open-Source","MIT"],
+      links: [{text:"PharmaForest", href:"https://github.com/PharmaForest"}, {text:"SPF", href:"https://github.com/yabwon/SAS_PACKAGES"},{text:"SASPAC", href:"https://github.com/SASPAC"}]
+    },
+    forester: {
+      title: "Forester (Contributors)",
+      img: "./logo/squirrel.png",
+      desc: 
+      `
+      Kudos to all contributors who have enriched the PharmaForest repository with their valuable contributions! Your efforts in developing, maintaining, and enhancing these packages are greatly appreciated and play a crucial role in advancing the SAS programming community within the pharmaceutical industry!<br><br>
+
+      Bartosz Jablonski : Developer of SAS Packages Framework (SPF) and SAS Packages Archive (SASPAC).<br><br>
+
+      Hiroki Yamanobe   : Co-founder of PharmaForest. OncoPlotter, misc, rtfCreator, adamski, freqSum<br>
+      Yutaka Morioka    : Co-founder of PharmaForest. Sashash, sas_dataset_json, sas_faker, saslogchecker and so on, you name it.<br>
+      Ryo Nakaya        : Co-founder of PharmaForest. SASPACer, SASPACerShiny, devil.<br><br>
+
+      Miyuki Aso        : devil(%sudoku_solver)<br>
+      Akira Matsuzawa   : devil(%hanabi)<br>
+      Teruko Narusawa   : RWDExpress<br>
+      Shingo Suzuki and SAS Japan team : SASToolbox<br>
       `,
       badges: ["SAS Packages","Repository","Open-Source","MIT"],
       links: [{text:"PharmaForest", href:"https://github.com/PharmaForest"}, {text:"SPF", href:"https://github.com/yabwon/SAS_PACKAGES"},{text:"SASPAC", href:"https://github.com/SASPAC"}]
