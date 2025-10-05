@@ -397,6 +397,10 @@
         <img src="./logo/SASToolbox.png" alt="SASToolbox">
         <div class="meta"><div class="title">SASToolbox</div><div class="hint">Tool box to handle files all at once</div></div>
       </div>
+      <div class="logo" data-key="trial_flow">
+        <img src="./logo/trial_flow.png" alt="trial_flow">
+        <div class="meta"><div class="title">Trial Flow</div><div class="hint">Macros to create flow diagrams</div></div>
+      </div>
       <div class="logo" data-key="forest_navigator">
         <img src="./logo/forest_navigator.png" alt="forest_navigator">
         <div class="meta"><div class="title">Dr. Forest, Morio</div><div class="hint">Master Navigator of PharmaForest</div></div>
@@ -777,6 +781,18 @@
       badges: ["encoding","files","Data Utility","MIT"],
       links: [{text:"SASToolbox", href:"https://github.com/PharmaForest/SASToolbox"},{text:"Ask Dr.Forest", href:"https://chatgpt.com/g/g-6881d98193ec8191abb19e4e920cb64c-dr-forest"}]
     },
+    trial_flow: {
+      title: "trial_flow",
+      img: "./logo/trial_flow.png",
+      summary: "A SAS macro package for creating flow diagrams, including CONSORT diagrams, with boxes, lines, and plots for clinical trial workflows.",
+      license: "MIT",
+      authors: ["Yutaka Morioka"],
+      maintainers: ["Yutaka Morioka"],
+      features: ["trial flow", "diagrams"],
+      macros: ["%diagram_box(),<br>%diagram_line(),<br>%diagram_plot()"],
+      badges: ["trial flow diagrams","Output/Visualization","MIT"],
+      links: [{text:"trial_flow", href:"https://github.com/PharmaForest/trial_flow"},{text:"Ask Dr.Forest", href:"https://chatgpt.com/g/g-6881d98193ec8191abb19e4e920cb64c-dr-forest"}]
+    },
     forest_navigator: {
       title: "Dr. Forest, Morio",
       img: "./logo/forest_navigator.png",
@@ -866,7 +882,8 @@ const layoutMap = {
 
 
   qc_cat_referee:   {x: 96, y: 579, scale: 0.6},
-  SASToolbox:       {x: 206, y: 581, scale: 0.6}
+  SASToolbox:       {x: 206, y: 581, scale: 0.59},
+  trial_flow:       {x: 315, y: 579, scale: 0.64},
 };
 
 function buildFreeBoard(itemsObj){
