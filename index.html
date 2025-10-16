@@ -401,6 +401,10 @@
         <img src="./logo/trial_flow.png" alt="trial_flow">
         <div class="meta"><div class="title">Trial Flow</div><div class="hint">Macros to create flow diagrams</div></div>
       </div>
+      <div class="logo" data-key="valivali">
+        <img src="./logo/valivali.png" alt="valivali">
+        <div class="meta"><div class="title">Valivali</div><div class="hint">Toolbox for validation</div></div>
+      </div>
       <div class="logo" data-key="forest_navigator">
         <img src="./logo/forest_navigator.png" alt="forest_navigator">
         <div class="meta"><div class="title">Dr. Forest, Morio</div><div class="hint">Master Navigator of PharmaForest</div></div>
@@ -433,7 +437,7 @@
 
       <br><br> PharmaForest is built on top of SAS Packages Framework(SPF), which was developed by Bartosz Jablonski. There are more packages in his repository SAS Packages Archive(SASPAC).<br><br>
       `,
-      badges: ["SAS Packages","Repository","Open-Source","MIT"],
+      badges: ["SAS Packages","Repository","Open-Source","MIT/Apache-2.0"],
       links: [{text:"PharmaForest", href:"https://github.com/PharmaForest"}, {text:"SPF", href:"https://github.com/yabwon/SAS_PACKAGES"},{text:"SASPAC", href:"https://github.com/SASPAC"}]
     },
     forester: {
@@ -454,7 +458,7 @@
       Teruko Narusawa   : RWDExpress<br>
       Shingo Suzuki and SAS Japan folks : SASToolbox<br>
       `,
-      badges: ["SAS Packages","Repository","Open-Source","MIT"],
+      badges: ["SAS Packages","Repository","Open-Source"],
       links: [{text:"PharmaForest", href:"https://github.com/PharmaForest"}, {text:"SPF", href:"https://github.com/yabwon/SAS_PACKAGES"},{text:"SASPAC", href:"https://github.com/SASPAC"}]
     },
     oncoplotter: {
@@ -725,11 +729,11 @@
       title: "Adamski",
       img: "./logo/adamski.png",
       summary: "The adamski package is currently under development to support ADaM creation. Let's build the spaceship [adamski] together! 🛰️ Inspired by the admiral package in R, adamski aims to bring similar functionality — along with original functions and macros — to the SAS environment. We are looking for collaborators and contributors to join us on this exciting journey. If you’re passionate about ADaM programming or want to help shape tools for the clinical data community, we’d love to have you onboard! 🚀",
-      license: "MIT",
+      license: "Apache-2.0",
       authors: ["PharmaForest"],
       maintainers: ["PharmaForest"],
       features: ["creating CDISC ADaM"],
-      macros: ["TBD"],
+      macros: ["%derive_vars_dy(), <br>derive_var_merged_exist_flag()"],
       badges: ["ADaM", "Data Utility","MIT"],
       links: [{text:"Adamski", href:"https://github.com/PharmaForest/adamski"},{text:"Ask Dr.Forest", href:"https://chatgpt.com/g/g-6881d98193ec8191abb19e4e920cb64c-dr-forest"}]
     },
@@ -792,6 +796,18 @@
       macros: ["%diagram_box(),<br>%diagram_line(),<br>%diagram_plot()"],
       badges: ["trial flow diagrams","Output/Visualization","MIT"],
       links: [{text:"trial_flow", href:"https://github.com/PharmaForest/trial_flow"},{text:"Ask Dr.Forest", href:"https://chatgpt.com/g/g-6881d98193ec8191abb19e4e920cb64c-dr-forest"}]
+    },
+    valivali: {
+      title: "valivali",
+      img: "./logo/valivali.png",
+      summary: "Valivali is a validation toolbox that provides utilities to test and validate SAS packages. Use it during package creation and verification to ensure expected behavior and reproducible results. Valivali loads {sasjscore} package developed by Allan Bowe when valivali is loaded and strongly influenced and powered by sasjscore. You need to install {sasjscore} to use the package. By loading valivali, users can utilize valivali original macros in addition to {sasjscore} macros for validation. BTW, `valivali` means bad boy's vibes in Japanese😁",
+      license: "MIT",
+      authors: ["PharmaForest"],
+      maintainers: ["PharmaForest"],
+      features: ["validation", "assertion"],
+      macros: ["%mp_assertdataset(),<br>other macros in {sasjscore}"],
+      badges: ["validation","Checker","MIT"],
+      links: [{text:"valivali", href:"https://github.com/PharmaForest/valivali"},{text:"Ask Dr.Forest", href:"https://chatgpt.com/g/g-6881d98193ec8191abb19e4e920cb64c-dr-forest"}]
     },
     forest_navigator: {
       title: "Dr. Forest, Morio",
@@ -884,6 +900,7 @@ const layoutMap = {
   qc_cat_referee:   {x: 96, y: 579, scale: 0.6},
   SASToolbox:       {x: 206, y: 581, scale: 0.59},
   trial_flow:       {x: 315, y: 579, scale: 0.64},
+  valivali:         {x: 423, y: 579, scale: 0.6},
 };
 
 function buildFreeBoard(itemsObj){
