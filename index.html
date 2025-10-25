@@ -395,7 +395,7 @@
       </div>
       <div class="logo" data-key="SASToolbox">
         <img src="./logo/SASToolbox.png" alt="SASToolbox">
-        <div class="meta"><div class="title">SASToolbox</div><div class="hint">Tool box to handle files all at once</div></div>
+        <div class="meta"><div class="title">SASToolbox</div><div class="hint">Toolbox to handle files all at once</div></div>
       </div>
       <div class="logo" data-key="trial_flow">
         <img src="./logo/trial_flow.png" alt="trial_flow">
@@ -404,6 +404,10 @@
       <div class="logo" data-key="valivali">
         <img src="./logo/valivali.png" alt="valivali">
         <div class="meta"><div class="title">Valivali</div><div class="hint">Toolbox for validation</div></div>
+      </div>
+      <div class="logo" data-key="mergex">
+        <img src="./logo/mergex.png" alt="mergex">
+        <div class="meta"><div class="title">Mergex</div><div class="hint">Merge methods for non-standard situations</div></div>
       </div>
       <div class="logo" data-key="forest_navigator">
         <img src="./logo/forest_navigator.png" alt="forest_navigator">
@@ -810,6 +814,18 @@
       badges: ["validation","Checker","MIT"],
       links: [{text:"valivali", href:"https://github.com/PharmaForest/valivali"},{text:"Ask Dr.Forest", href:"https://chatgpt.com/g/g-6881d98193ec8191abb19e4e920cb64c-dr-forest"}]
     },
+    mergex: {
+      title: "mergex",
+      img: "./logo/mergex.png",
+      summary: "MERGEX is a package that enables non-standard or unconventional joins not easily handled or supported by standard SAS syntax. It currently implements variable-name conflict-safe joins, and will support rolling joins and other advanced join types in future releases.",
+      license: "MIT",
+      authors: ["Yutaka Morioka"],
+      maintainers: ["Yutaka Morioka"],
+      features: ["merge", "non-standard joins"],
+      macros: ["%varconf_merge()"],
+      badges: ["merge/join","Data Utility","MIT"],
+      links: [{text:"mergex", href:"https://github.com/PharmaForest/mergex"},{text:"Ask Dr.Forest", href:"https://chatgpt.com/g/g-6881d98193ec8191abb19e4e920cb64c-dr-forest"}]
+    },
     forest_navigator: {
       title: "Dr. Forest, Morio",
       img: "./logo/forest_navigator.png",
@@ -902,6 +918,7 @@ const layoutMap = {
   SASToolbox:       {x: 206, y: 581, scale: 0.59},
   trial_flow:       {x: 315, y: 579, scale: 0.64},
   valivali:         {x: 423, y: 579, scale: 0.6},
+  mergex:           {x: 530, y: 579, scale: 0.64}
 };
 
 function buildFreeBoard(itemsObj){
