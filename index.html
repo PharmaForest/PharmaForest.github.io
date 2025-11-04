@@ -409,6 +409,10 @@
         <img src="./logo/mergex.png" alt="mergex">
         <div class="meta"><div class="title">Mergex</div><div class="hint">Merge methods for non-standard situations</div></div>
       </div>
+      <div class="logo" data-key="basketMiningKit">
+        <img src="./logo/basketMiningKit.png" alt="basketMiningKit">
+        <div class="meta"><div class="title">Basket Mining Kit</div><div class="hint"> Package for Association analysis</div></div>
+      </div>
       <div class="logo" data-key="forest_navigator">
         <img src="./logo/forest_navigator.png" alt="forest_navigator">
         <div class="meta"><div class="title">Dr. Forest, Morio</div><div class="hint">Master Navigator of PharmaForest</div></div>
@@ -416,6 +420,10 @@
       <div class="logo" data-key="apple">
         <img src="./logo/apple.png" alt="apple">
         <div class="meta"><div class="title">Dr. Apple</div><div class="hint">Support Navigator of PharmaForest</div></div>
+      </div>
+      <div class="logo" data-key="Rio">
+        <img src="./logo/Rio.png" alt="Rio">
+        <div class="meta"><div class="title">Rio</div><div class="hint">Support Navigator of PharmaForest</div></div>
       </div>
       <div class="logo" data-key="lady">
         <img src="./logo/SASPackageLady.png" alt="SASPackageLady">
@@ -829,6 +837,18 @@
       badges: ["merge/join","Data Utility","MIT"],
       links: [{text:"mergex", href:"https://github.com/PharmaForest/mergex"},{text:"Ask Dr.Forest", href:"https://chatgpt.com/g/g-6881d98193ec8191abb19e4e920cb64c-dr-forest"}]
     },
+    basketMiningKit: {
+      title: "basketMiningKit",
+      img: "./logo/basketMiningKit.png",
+      summary: "BasketMiningKit is a package that Perform association analysis using only Base SAS functionality, without using Enterprise Miner or SAS Viya.",
+      license: "MIT",
+      authors: ["Yutaka Morioka"],
+      maintainers: ["Yutaka Morioka"],
+      features: ["Association analysis"],
+      macros: ["%association_rule_mining()"],
+      badges: ["Association analysis","Output/Visualization","MIT"],
+      links: [{text:"basketMiningKit", href:"https://github.com/PharmaForest/basketMiningKit"},{text:"Ask Dr.Forest", href:"https://chatgpt.com/g/g-6881d98193ec8191abb19e4e920cb64c-dr-forest"}]
+    },
     forest_navigator: {
       title: "Dr. Forest, Morio",
       img: "./logo/forest_navigator.png",
@@ -845,10 +865,19 @@
       title: "Dr. Apple",
       img: "./logo/apple.png",
       desc: `
-      Dr. Apple is our support navigator. He has a strong character but cool GPT assistant who can asnwer details of #16 and later packages. However, please understand that he is not speaking on behalf of our organization. You need to sign up to ChatGPT (at least a free user account) to talk to him. See more about his background.<br><br>
+      Dr. Apple is our support navigator. He has a strong character but cool GPT assistant who can asnwer details of #16 - #30 packages. However, please understand that he is not speaking on behalf of our organization. You need to sign up to ChatGPT (at least a free user account) to talk to him. See more about his background.<br><br>
       `,
       badges: ["PharmaForest","Navigator","GPTs assistant"],
       links: [{text:"Background", href:"https://github.com/PharmaForest/.github/blob/main/Apple_background.md"}, {text:"Ask Dr.Apple", href:"https://chatgpt.com/g/g-68abce4602908191b56d53895bb2e9dc-dr-apple"}]
+    },
+      Rio: {
+      title: "Rio",
+      img: "./logo/Rio.png",
+      desc: `
+      Rio is our support navigator. She/He is a mysterious GPT assistant who can asnwer details of #31 and later packages. However, please understand that she/he is not speaking on behalf of our organization. You need to sign up to ChatGPT (at least a free user account) to talk to her/him. See more about her/his background.<br><br>
+      `,
+      badges: ["PharmaForest","Navigator","GPTs assistant"],
+      links: [{text:"Background", href:"https://github.com/PharmaForest/.github/blob/main/Rio_background.md"}, {text:"Ask Rio", href:"https://chatgpt.com/g/g-690695e7647c81919c91b01d9b0e621d-rio"}]
     },
       lady: {
       title: "SAS Package Lady (Oba-chan)",
@@ -921,7 +950,9 @@ const layoutMap = {
   SASToolbox:       {x: 206, y: 581, scale: 0.59},
   trial_flow:       {x: 315, y: 579, scale: 0.64},
   valivali:         {x: 423, y: 579, scale: 0.6},
-  mergex:           {x: 530, y: 579, scale: 0.64}
+  mergex:           {x: 530, y: 579, scale: 0.64},
+
+  basketMiningKit: {x: 40, y: 672, scale: 0.63}
 };
 
 function buildFreeBoard(itemsObj){
