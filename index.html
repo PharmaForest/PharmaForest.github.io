@@ -413,6 +413,10 @@
         <img src="./logo/basketMiningKit.png" alt="basketMiningKit">
         <div class="meta"><div class="title">Basket Mining Kit</div><div class="hint"> Package for Association analysis</div></div>
       </div>
+      <div class="logo" data-key="datacut_sas">
+        <img src="./logo/datacut_sas.png" alt="datacut_sas">
+        <div class="meta"><div class="title">Datacut_SAS</div><div class="hint">Data Cutting Tool</div></div>
+      </div>
       <div class="logo" data-key="forest_navigator">
         <img src="./logo/forest_navigator.png" alt="forest_navigator">
         <div class="meta"><div class="title">Dr. Forest, Morio</div><div class="hint">Master Navigator of PharmaForest</div></div>
@@ -849,6 +853,18 @@
       badges: ["Association analysis","Output/Visualization","MIT"],
       links: [{text:"basketMiningKit", href:"https://github.com/PharmaForest/basketMiningKit"},{text:"Ask Dr.Forest", href:"https://chatgpt.com/g/g-6881d98193ec8191abb19e4e920cb64c-dr-forest"}]
     },
+    datacut_sas: {
+      title: "datacut_sas",
+      img: "./logo/datacut_sas.png",
+      summary: "Datacut_SAS is a set of SAS macros to prepare SDTM for data-cut analyses: remove post-cutoff records, overwrite with the cutoff date/time, drop subjects, and null flags. Supports multiple cutoff operations and generates an Excel report summarizing all applied changes.",
+      license: "MIT",
+      authors: ["Yutaka Morioka"],
+      maintainers: ["Yutaka Morioka"],
+      features: ["Data-cut"],
+      macros: ["%cutoff_setting(), <br>%cutoff_overwrite(), <br>%cutoff_delete(),<br>%cutoff_missing(),<br>%delete_participants(), <br>%output_and_report()"],
+      badges: ["Data-cut","SDTM","raw data","Data Utility","MIT"],
+      links: [{text:"datacut_sas", href:"https://github.com/PharmaForest/datacut_sas"},{text:"Ask Dr.Forest", href:"https://chatgpt.com/g/g-6881d98193ec8191abb19e4e920cb64c-dr-forest"}]
+    },
     forest_navigator: {
       title: "Dr. Forest, Morio",
       img: "./logo/forest_navigator.png",
@@ -952,7 +968,8 @@ const layoutMap = {
   valivali:         {x: 423, y: 579, scale: 0.6},
   mergex:           {x: 530, y: 579, scale: 0.64},
 
-  basketMiningKit: {x: 40, y: 672, scale: 0.63}
+  basketMiningKit: {x: 40, y: 672, scale: 0.63},
+  datacut_sas:     {x: 150, y: 672, scale: 0.6}
 };
 
 function buildFreeBoard(itemsObj){
