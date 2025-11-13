@@ -417,6 +417,10 @@
         <img src="./logo/datacut_sas.png" alt="datacut_sas">
         <div class="meta"><div class="title">Datacut_SAS</div><div class="hint">Data Cutting Tool</div></div>
       </div>
+      <div class="logo" data-key="retro_spell_check">
+        <img src="./logo/retro_spell_check.png" alt="retro_spell_check">
+        <div class="meta"><div class="title">Retro_Spell_Check</div><div class="hint">Batch Spell Verifier</div></div>
+      </div>
       <div class="logo" data-key="forest_navigator">
         <img src="./logo/forest_navigator.png" alt="forest_navigator">
         <div class="meta"><div class="title">Dr. Forest, Morio</div><div class="hint">Master Navigator of PharmaForest</div></div>
@@ -865,6 +869,18 @@
       badges: ["Data-cut","SDTM","raw data","Data Utility","MIT"],
       links: [{text:"datacut_sas", href:"https://github.com/PharmaForest/datacut_sas"},{text:"Ask Dr.Forest", href:"https://chatgpt.com/g/g-6881d98193ec8191abb19e4e920cb64c-dr-forest"}]
     },
+    retro_spell_check: {
+      title: "retro_spell_check",
+      img: "./logo/retro_spell_check.png",
+      summary: "Batch spell verification for all files in a target folder. For each file, runs PROC SPELL with optional custom dictionary, writes the spell output to a per-file .txt, aggregates results, and exports a review-friendly Excel report.",
+      license: "MIT",
+      authors: ["Yutaka Morioka"],
+      maintainers: ["Yutaka Morioka"],
+      features: ["Spell Check"],
+      macros: ["%retro_spell_check()"],
+      badges: ["Spell check","Batch","Checker","MIT"],
+      links: [{text:"retro_spell_check", href:"https://github.com/PharmaForest/retro_spell_check"},{text:"Ask Dr.Forest", href:"https://chatgpt.com/g/g-6881d98193ec8191abb19e4e920cb64c-dr-forest"}]
+    },
     forest_navigator: {
       title: "Dr. Forest, Morio",
       img: "./logo/forest_navigator.png",
@@ -969,7 +985,8 @@ const layoutMap = {
   mergex:           {x: 530, y: 579, scale: 0.64},
 
   basketMiningKit: {x: 40, y: 672, scale: 0.63},
-  datacut_sas:     {x: 150, y: 672, scale: 0.6}
+  datacut_sas:     {x: 150, y: 672, scale: 0.6},
+  retro_spell_check:{x: 260, y: 672, scale: 0.64}
 };
 
 function buildFreeBoard(itemsObj){
