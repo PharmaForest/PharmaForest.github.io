@@ -425,6 +425,10 @@
         <img src="./logo/sas_dataset_toon.png" alt="sas_dataset_toon">
         <div class="meta"><div class="title">sas_dataset_toon</div><div class="hint">Toon generator</div></div>
       </div>
+      <div class="logo" data-key="defensivechk">
+        <img src="./logo/defensivechk.png" alt="defensivechk">
+        <div class="meta"><div class="title">defensivechk</div><div class="hint">Defensive checks macros</div></div>
+      </div>
       <div class="logo" data-key="forest_navigator">
         <img src="./logo/forest_navigator.png" alt="forest_navigator">
         <div class="meta"><div class="title">Dr. Forest, Morio</div><div class="hint">Master Navigator of PharmaForest</div></div>
@@ -483,7 +487,7 @@
       Teruko Narusawa   : RWDExpress<br>
       Shingo Suzuki and SAS Japan folks : SASToolbox<br>
       Rika Sakai        : Oncoplotter(test of %waterfall_plot)<br>
-      Saikrishnareddy Yengannagari : sas_dataset_toon<br>
+      Saikrishnareddy Yengannagari : sas_dataset_toon, defensivechk<br>
       `,
       badges: ["SAS Packages","Repository","Open-Source"],
       links: [{text:"PharmaForest", href:"https://github.com/PharmaForest"}, {text:"SPF", href:"https://github.com/yabwon/SAS_PACKAGES"},{text:"SASPAC", href:"https://github.com/SASPAC"}]
@@ -898,6 +902,18 @@
       badges: ["TOON","Converter","Data Utility","MIT"],
       links: [{text:"sas_dataset_toon", href:"https://github.com/PharmaForest/sas_dataset_toon"},{text:"Ask Dr.Forest", href:"https://chatgpt.com/g/g-6881d98193ec8191abb19e4e920cb64c-dr-forest"}]
     },
+    defensivechk: {
+      title: "defensivechk",
+      img: "./logo/defensivechk.png",
+      summary: "This repository contains a SAS macro designed to perform defensive checks on macro parameters, datasets, and variables. It ensures that the necessary items are defined before further data processing, and if any required items are missing or incorrect, it will provide error messages and can abort execution. This repository is an adapted version of Saikrishnareddy Yengannagari’s original package (https://github.com/kusy2009/defensivechk) tailored for the SAS Package Framework, and the original license remains the property of Saikrishnareddy Yengannagari.",
+      license: "MIT",
+      authors: ["Saikrishnareddy Yengannagari"],
+      maintainers: ["Saikrishnareddy Yengannagari","Yutaka Morioka"],
+      features: ["defensive checks"],
+      macros: ["%defensivechk()"],
+      badges: ["Defensive Checks","macro","Checker","MIT"],
+      links: [{text:"defensivechk", href:"https://github.com/PharmaForest/defensivechk"},{text:"Ask Dr.Forest", href:"https://chatgpt.com/g/g-6881d98193ec8191abb19e4e920cb64c-dr-forest"}]
+    },
     forest_navigator: {
       title: "Dr. Forest, Morio",
       img: "./logo/forest_navigator.png",
@@ -1004,7 +1020,8 @@ const layoutMap = {
   basketMiningKit: {x: 40, y: 672, scale: 0.63},
   datacut_sas:     {x: 150, y: 672, scale: 0.6},
   retro_spell_check:{x: 260, y: 672, scale: 0.64},
-  sas_dataset_toon:{x: 370, y: 672, scale: 0.6}
+  sas_dataset_toon:{x: 370, y: 672, scale: 0.6},
+  defensivechk:    {x: 476, y: 672, scale: 0.63}
 };
 
 function buildFreeBoard(itemsObj){
