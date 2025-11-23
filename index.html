@@ -429,6 +429,10 @@
         <img src="./logo/defensivechk.png" alt="defensivechk">
         <div class="meta"><div class="title">defensivechk</div><div class="hint">Defensive checks macros</div></div>
       </div>
+      <div class="logo" data-key="GetCDISCCodelist">
+        <img src="./logo/GetCDISCCodelist.png" alt="GetCDISCCodelist">
+        <div class="meta"><div class="title">GetCDISCCodelist</div><div class="hint">Get CDISC Codelist</div></div>
+      </div>
       <div class="logo" data-key="forest_navigator">
         <img src="./logo/forest_navigator.png" alt="forest_navigator">
         <div class="meta"><div class="title">Dr. Forest, Morio</div><div class="hint">Master Navigator of PharmaForest</div></div>
@@ -487,7 +491,7 @@
       Teruko Narusawa   : RWDExpress<br>
       Shingo Suzuki and SAS Japan folks : SASToolbox<br>
       Rika Sakai        : Oncoplotter(test of %waterfall_plot)<br>
-      Saikrishnareddy Yengannagari : sas_dataset_toon, defensivechk<br>
+      Saikrishnareddy Yengannagari : sas_dataset_toon, defensivechk, GetCDISCCodelist<br>
       `,
       badges: ["SAS Packages","Repository","Open-Source"],
       links: [{text:"PharmaForest", href:"https://github.com/PharmaForest"}, {text:"SPF", href:"https://github.com/yabwon/SAS_PACKAGES"},{text:"SASPAC", href:"https://github.com/SASPAC"}]
@@ -838,7 +842,7 @@
       authors: ["PharmaForest"],
       maintainers: ["PharmaForest"],
       features: ["validation", "assertion"],
-      macros: ["%mp_assertdataset(),<br>other macros in {sasjscore}, <br>%set_tmp_lib(), <br>%create_report()"],
+      macros: ["%mp_assertdataset(),<br>%mp_assertgraph(),<br>other macros in {sasjscore}, <br>%set_tmp_lib(), <br>%create_report()"],
       badges: ["validation","Checker","MIT"],
       links: [{text:"valivali", href:"https://github.com/PharmaForest/valivali"},{text:"Ask Dr.Forest", href:"https://chatgpt.com/g/g-6881d98193ec8191abb19e4e920cb64c-dr-forest"}]
     },
@@ -913,6 +917,18 @@
       macros: ["%defensivechk()"],
       badges: ["Defensive Checks","macro","Checker","MIT"],
       links: [{text:"defensivechk", href:"https://github.com/PharmaForest/defensivechk"},{text:"Ask Dr.Forest", href:"https://chatgpt.com/g/g-6881d98193ec8191abb19e4e920cb64c-dr-forest"}]
+    },
+    GetCDISCCodelist: {
+      title: "GetCDISCCodelist",
+      img: "./logo/GetCDISCCodelist.png",
+      summary: "This SAS macro retrieves and filters CDISC Controlled Terminology (CT) codelists for various CDISC standards (SDTM, ADaM, CDASH, etc.). The macro interacts with the CDISC Terminology API to fetch the latest terminology version and filters the codelists based on the specified input parameters. This repository is an adapted version of Saikrishnareddy Yengannagari’s original package (https://github.com/kusy2009/getCDISCCOdelist) tailored for the SAS Package Framework, and the original license remains the property of Saikrishnareddy Yengannagari.",
+      license: "MIT",
+      authors: ["Saikrishnareddy Yengannagari"],
+      maintainers: ["Saikrishnareddy Yengannagari","Yutaka Morioka"],
+      features: ["CDISC", "Codelists"],
+      macros: ["%GetCDISCCodelist()"],
+      badges: ["CDISC","Codelists","fetch","Other","MIT"],
+      links: [{text:"GetCDISCCodelist", href:"https://github.com/PharmaForest/GetCDISCCodelist"},{text:"Ask Dr.Forest", href:"https://chatgpt.com/g/g-6881d98193ec8191abb19e4e920cb64c-dr-forest"}]
     },
     forest_navigator: {
       title: "Dr. Forest, Morio",
@@ -1021,7 +1037,9 @@ const layoutMap = {
   datacut_sas:     {x: 150, y: 672, scale: 0.6},
   retro_spell_check:{x: 260, y: 672, scale: 0.64},
   sas_dataset_toon:{x: 370, y: 672, scale: 0.6},
-  defensivechk:    {x: 476, y: 672, scale: 0.63}
+  defensivechk:    {x: 476, y: 672, scale: 0.63},
+
+  GetCDISCCodelist:{x: 96, y: 762, scale: 0.6}
 };
 
 function buildFreeBoard(itemsObj){
