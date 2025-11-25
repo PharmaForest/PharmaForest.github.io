@@ -433,6 +433,10 @@
         <img src="./logo/GetCDISCCodelist.png" alt="GetCDISCCodelist">
         <div class="meta"><div class="title">GetCDISCCodelist</div><div class="hint">Get CDISC Codelist</div></div>
       </div>
+      <div class="logo" data-key="kpi_viz_toolbox">
+        <img src="./logo/kpi_viz_toolbox.png" alt="kpi_viz_toolbox">
+        <div class="meta"><div class="title">KPI Viz Toolbox</div><div class="hint">KPI Visualization Toolbox</div></div>
+      </div>
       <div class="logo" data-key="forest_navigator">
         <img src="./logo/forest_navigator.png" alt="forest_navigator">
         <div class="meta"><div class="title">Dr. Forest, Morio</div><div class="hint">Master Navigator of PharmaForest</div></div>
@@ -930,6 +934,18 @@
       badges: ["CDISC","Codelists","fetch","Other","MIT"],
       links: [{text:"GetCDISCCodelist", href:"https://github.com/PharmaForest/GetCDISCCodelist"},{text:"Ask Dr.Forest", href:"https://chatgpt.com/g/g-6881d98193ec8191abb19e4e920cb64c-dr-forest"}]
     },
+    kpi_viz_toolbox: {
+      title: "kpi_viz_toolbox",
+      img: "./logo/kpi_viz_toolbox.png",
+      summary: "KPI visualization macros for tracking and reporting SDTM/ADaM/TLF programming progress, including counts and proportion-based indicators for delivery status.",
+      license: "MIT",
+      authors: ["Yutaka Morioka"],
+      maintainers: ["Yutaka Morioka"],
+      features: ["KPI Visualization"],
+      macros: ["%number_kpi(), <br>%proportion_kpi()"],
+      badges: ["KPI","proc GKPI","Output/Visualization","MIT"],
+      links: [{text:"kpi_viz_toolbox", href:"https://github.com/PharmaForest/kpi_viz_toolbox"},{text:"Ask Dr.Forest", href:"https://chatgpt.com/g/g-6881d98193ec8191abb19e4e920cb64c-dr-forest"}]
+    },
     forest_navigator: {
       title: "Dr. Forest, Morio",
       img: "./logo/forest_navigator.png",
@@ -1039,7 +1055,8 @@ const layoutMap = {
   sas_dataset_toon:{x: 370, y: 672, scale: 0.6},
   defensivechk:    {x: 476, y: 672, scale: 0.63},
 
-  GetCDISCCodelist:{x: 96, y: 762, scale: 0.6}
+  GetCDISCCodelist:{x: 96, y: 762, scale: 0.6},
+  kpi_viz_toolbox:{x: 207, y: 763, scale: 0.6}
 };
 
 function buildFreeBoard(itemsObj){
