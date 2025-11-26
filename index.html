@@ -437,6 +437,10 @@
         <img src="./logo/kpi_viz_toolbox.png" alt="kpi_viz_toolbox">
         <div class="meta"><div class="title">KPI Viz Toolbox</div><div class="hint">KPI Visualization Toolbox</div></div>
       </div>
+      <div class="logo" data-key="outlier_screening">
+        <img src="./logo/outlier_screening.png" alt="outlier_screening">
+        <div class="meta"><div class="title">Outlier Screening</div><div class="hint">Outlier screening tools</div></div>
+      </div>
       <div class="logo" data-key="forest_navigator">
         <img src="./logo/forest_navigator.png" alt="forest_navigator">
         <div class="meta"><div class="title">Dr. Forest, Morio</div><div class="hint">Master Navigator of PharmaForest</div></div>
@@ -946,6 +950,18 @@
       badges: ["KPI","proc GKPI","Output/Visualization","MIT"],
       links: [{text:"kpi_viz_toolbox", href:"https://github.com/PharmaForest/kpi_viz_toolbox"},{text:"Ask Dr.Forest", href:"https://chatgpt.com/g/g-6881d98193ec8191abb19e4e920cb64c-dr-forest"}]
     },
+    outlier_screening: {
+      title: "outlier_screening",
+      img: "./logo/outlier_screening.png",
+      summary: "outlier_screening is a SAS macro toolkit for fast, review-friendly outlier detection. It flags extremes using SD (Z-score), MAD (robust Z), and IQR rules, adds ranks, and generates an annotated boxscatter plot for quick data screening.",
+      license: "MIT",
+      authors: ["Yutaka Morioka"],
+      maintainers: ["Yutaka Morioka"],
+      features: ["Outlier Detection"],
+      macros: ["%outlier_sd(), <br>%outlier_mad(), <br>%outlier_iqr(), <br>%outlier_all3()"],
+      badges: ["Outlier","Screening","Checker","MIT"],
+      links: [{text:"outlier_screening", href:"https://github.com/PharmaForest/outlier_screening"},{text:"Ask Dr.Forest", href:"https://chatgpt.com/g/g-6881d98193ec8191abb19e4e920cb64c-dr-forest"}]
+    },
     forest_navigator: {
       title: "Dr. Forest, Morio",
       img: "./logo/forest_navigator.png",
@@ -1056,7 +1072,8 @@ const layoutMap = {
   defensivechk:    {x: 476, y: 672, scale: 0.63},
 
   GetCDISCCodelist:{x: 96, y: 762, scale: 0.6},
-  kpi_viz_toolbox:{x: 207, y: 763, scale: 0.6}
+  kpi_viz_toolbox:{x: 207, y: 763, scale: 0.6},
+  outlier_screening:{x: 316, y: 761, scale: 0.59}
 };
 
 function buildFreeBoard(itemsObj){
