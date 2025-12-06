@@ -453,6 +453,10 @@
         <img src="./logo/sARDenMTS.png" alt="sARDenMTS">
         <div class="meta"><div class="title">sARDenMTS</div><div class="hint">ARD Metadata Manager</div></div>
       </div>
+      <div class="logo" data-key="corr">
+        <img src="./logo/corr.png" alt="corr">
+        <div class="meta"><div class="title">corr</div><div class="hint">Association Analysis Tools</div></div>
+      </div>
       <div class="logo" data-key="forest_navigator">
         <img src="./logo/forest_navigator.png" alt="forest_navigator">
         <div class="meta"><div class="title">Dr. Forest, Morio</div><div class="hint">Master Navigator of PharmaForest</div></div>
@@ -1010,6 +1014,18 @@
       badges: ["ARD","Analysis Results Data","Metadata","Data Utility","MIT"],
       links: [{text:"sARDenMTS", href:"https://github.com/PharmaForest/sARDenMTS"},{text:"Ask Dr.Forest", href:"https://chatgpt.com/g/g-6881d98193ec8191abb19e4e920cb64c-dr-forest"}]
     },
+    corr: {
+      title: "corr",
+      img: "./logo/corr.png",
+      summary: "A SAS package to provide macros for computing association measures between continuous, nominal, and ordinal variables. This package supports Pearson and Spearman correlations, Cramer's V, Somers' D, and Eta coefficient. Macro in the package outputs both long-format association tables and wide matrix-style datasets for further analysis. Includes a heatmap macro to visualize the strength and type of associations in a single plot. Tools for analysis or visualization related to correlation and association are to be added.",
+      license: "MIT",
+      authors: ["Ryo Nakaya"],
+      maintainers: ["Ryo Nakaya"],
+      features: ["Association analysis"],
+      macros: ["%association_matrix(),<br>%heatmap(),<br>%scatter_matrix()"],
+      badges: ["Association","Correlation","Output/Visualization","MIT"],
+      links: [{text:"corr", href:"https://github.com/PharmaForest/corr"},{text:"Ask Dr.Forest", href:"https://chatgpt.com/g/g-6881d98193ec8191abb19e4e920cb64c-dr-forest"}]
+    },
     forest_navigator: {
       title: "Dr. Forest, Morio",
       img: "./logo/forest_navigator.png",
@@ -1122,6 +1138,7 @@ const layoutMap = {
   GetCDISCCodelist:{x: 96, y: 762, scale: 0.6},
   kpi_viz_toolbox:{x: 207, y: 763, scale: 0.6},
   outlier_screening:{x: 316, y: 761, scale: 0.59},
+  corr:            {x: 423, y: 761, scale: 0.64},
 
   sARDen:          {x: 40, y: 851, scale: 0.6},
   sARDenX:         {x: 150, y: 851, scale: 0.6},
