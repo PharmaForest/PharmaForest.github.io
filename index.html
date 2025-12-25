@@ -457,6 +457,10 @@
         <img src="./logo/corr.png" alt="corr">
         <div class="meta"><div class="title">corr</div><div class="hint">Association Analysis Tools</div></div>
       </div>
+      <div class="logo" data-key="sas2typst_report">
+        <img src="./logo/sas2typst_report.png" alt="sas2typst_report">
+        <div class="meta"><div class="title">sas2typst_report</div><div class="hint">Typst Report Generator</div></div>
+      </div>
       <div class="logo" data-key="forest_navigator">
         <img src="./logo/forest_navigator.png" alt="forest_navigator">
         <div class="meta"><div class="title">Dr. Forest, Morio</div><div class="hint">Master Navigator of PharmaForest</div></div>
@@ -1026,6 +1030,18 @@
       badges: ["Association","Correlation","Output/Visualization","MIT"],
       links: [{text:"corr", href:"https://github.com/PharmaForest/corr"},{text:"Ask Dr.Forest", href:"https://chatgpt.com/g/g-6881d98193ec8191abb19e4e920cb64c-dr-forest"}]
     },
+    sas2typst_report: {
+      title: "sas2typst_report",
+      img: "./logo/sas2typst_report.png",
+      summary: "sas2typst_report is a SAS macro package that enables direct generation of Typst (.typ) files from within SAS. Typst is a modern, declarative typesetting system designed for fast and precise document layout. This package allows users to write native Typst code inline in SAS programs and seamlessly stream SAS dataset contents into Typst tables.",
+      license: "MIT",
+      authors: ["Yutaka Morioka"],
+      maintainers: ["Yutaka Morioka"],
+      features: ["Typst Report Generation"],
+      macros: ["%typst_start(), <br>%typst_end(),<br>%typ_dataset_csv()"],
+      badges: ["typst","report","Output/Visualization","MIT"],
+      links: [{text:"sas2typst_report", href:"https://github.com/PharmaForest/sas2typst_report"},{text:"Ask Dr.Forest", href:"https://chatgpt.com/g/g-6881d98193ec8191abb19e4e920cb64c-dr-forest"}]
+    },
     forest_navigator: {
       title: "Dr. Forest, Morio",
       img: "./logo/forest_navigator.png",
@@ -1139,6 +1155,7 @@ const layoutMap = {
   kpi_viz_toolbox:{x: 207, y: 763, scale: 0.6},
   outlier_screening:{x: 316, y: 761, scale: 0.59},
   corr:            {x: 423, y: 761, scale: 0.64},
+  sas2typst_report:{x: 531, y: 764, scale: 0.62},
 
   sARDen:          {x: 40, y: 851, scale: 0.6},
   sARDenX:         {x: 150, y: 851, scale: 0.6},
