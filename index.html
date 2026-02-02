@@ -461,6 +461,10 @@
         <img src="./logo/sas2typst_report.png" alt="sas2typst_report">
         <div class="meta"><div class="title">sas2typst_report</div><div class="hint">Typst Report Generator</div></div>
       </div>
+      <div class="logo" data-key="dataset_maker">
+        <img src="./logo/dataset_maker.png" alt="dataset_maker">
+        <div class="meta"><div class="title">dataset_maker</div><div class="hint">Dataset Maker</div></div>
+      </div>
       <div class="logo" data-key="forest_navigator">
         <img src="./logo/forest_navigator.png" alt="forest_navigator">
         <div class="meta"><div class="title">Dr. Forest, Morio</div><div class="hint">Master Navigator of PharmaForest</div></div>
@@ -1042,6 +1046,18 @@
       badges: ["typst","report","Output/Visualization","MIT"],
       links: [{text:"sas2typst_report", href:"https://github.com/PharmaForest/sas2typst_report"},{text:"Ask Dr.Forest", href:"https://chatgpt.com/g/g-6881d98193ec8191abb19e4e920cb64c-dr-forest"}]
     },
+    dataset_maker: {
+      title: "dataset_maker",
+      img: "./logo/dataset_maker.png",
+      summary: "The dataset_maker package is intended to consolidate functions related to generating SAS datasets. As its first feature, the ds2datalines macro converts a SAS dataset back into dataset creation code.",
+      license: "MIT",
+      authors: ["Yutaka Morioka"],
+      maintainers: ["Yutaka Morioka"],
+      features: ["SAS datasets generation"],
+      macros: ["%ds2datalines()"],
+      badges: ["dataset","generator","Data Utility","MIT"],
+      links: [{text:"dataset_maker", href:"https://github.com/PharmaForest/dataset_maker"},{text:"Ask Dr.Forest", href:"https://chatgpt.com/g/g-6881d98193ec8191abb19e4e920cb64c-dr-forest"}]
+    },    
     forest_navigator: {
       title: "Dr. Forest, Morio",
       img: "./logo/forest_navigator.png",
@@ -1159,7 +1175,8 @@ const layoutMap = {
 
   sARDen:          {x: 40, y: 851, scale: 0.6},
   sARDenX:         {x: 150, y: 851, scale: 0.6},
-  sARDenMTS:       {x: 260, y: 851, scale: 0.6}
+  sARDenMTS:       {x: 260, y: 851, scale: 0.6},
+  dataset_maker:  {x: 370, y: 854, scale: 0.6},
 };
 
 function buildFreeBoard(itemsObj){
