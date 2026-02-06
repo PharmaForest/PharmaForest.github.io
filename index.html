@@ -465,6 +465,10 @@
         <img src="./logo/dataset_maker.png" alt="dataset_maker">
         <div class="meta"><div class="title">dataset_maker</div><div class="hint">Dataset Maker</div></div>
       </div>
+      <div class="logo" data-key="sashighlight">
+        <img src="./logo/SAShighlight.png" alt="SAShighlight">
+        <div class="meta"><div class="title">SAShighlight</div><div class="hint">Visually Highlight Tool</div></div>
+      </div>
       <div class="logo" data-key="forest_navigator">
         <img src="./logo/forest_navigator.png" alt="forest_navigator">
         <div class="meta"><div class="title">Dr. Forest, Morio</div><div class="hint">Master Navigator of PharmaForest</div></div>
@@ -522,8 +526,9 @@
       Akira Matsuzawa   : devil(%hanabi)<br>
       Teruko Narusawa   : RWDExpress<br>
       Shingo Suzuki and SAS Japan folks : SASToolbox<br>
-      Rika Sakai        : Oncoplotter(test of %waterfall_plot)<br>
+      Rika Sakai        : test of Oncoplotter<br>
       Saikrishnareddy Yengannagari : sas_dataset_toon, defensivechk, GetCDISCCodelist, misc<br>
+      Yoshiki Tokuda    : SAShighlight<br>
       `,
       badges: ["SAS Packages","Repository","Open-Source"],
       links: [{text:"PharmaForest", href:"https://github.com/PharmaForest"}, {text:"SPF", href:"https://github.com/yabwon/SAS_PACKAGES"},{text:"SASPAC", href:"https://github.com/SASPAC"}]
@@ -1057,7 +1062,19 @@
       macros: ["%ds2datalines()"],
       badges: ["dataset","generator","Data Utility","MIT"],
       links: [{text:"dataset_maker", href:"https://github.com/PharmaForest/dataset_maker"},{text:"Ask Dr.Forest", href:"https://chatgpt.com/g/g-6881d98193ec8191abb19e4e920cb64c-dr-forest"}]
-    },    
+    },  
+    sashighlight: {
+      title: "SAShighlight",
+      img: "./logo/SAShighlight.png",
+      summary: "SAS Highlight is a utility package designed to visually highlight data points, subjects, or groups that meet specific conditions in ODS Graphics plots. The package focuses on commonly used exploratory and review graphics in clinical and analytical workflows, especially: - Spaghetti plots - Scatter plots",
+      license: "MIT",
+      authors: ["Yoshiki Tokuda"],
+      maintainers: ["Yoshiki Tokuda"],
+      features: ["Highlighting in ODS Graphics"],
+      macros: ["%fig_setup(), <br>%highlight_attrmap(), <br>%highlight_refline(), <br>%highlight_spaghetti(),<br>%highlight_series(),<br>%highlight_scatter_by_individual(), <br>%highlight_scatter_by_group()"],
+      badges: ["ODS Graphics","Highlight","Output/Visualization","MIT"],
+      links: [{text:"sashighlight", href:"https://github.com/PharmaForest/sashighlight"},{text:"Ask Dr.Forest", href:"https://chatgpt.com/g/g-6881d98193ec8191abb19e4e920cb64c-dr-forest"}]
+    },   
     forest_navigator: {
       title: "Dr. Forest, Morio",
       img: "./logo/forest_navigator.png",
@@ -1177,6 +1194,7 @@ const layoutMap = {
   sARDenX:         {x: 150, y: 851, scale: 0.6},
   sARDenMTS:       {x: 260, y: 851, scale: 0.6},
   dataset_maker:  {x: 370, y: 854, scale: 0.6},
+  sashighlight:   {x: 476, y: 854, scale: 0.62},
 };
 
 function buildFreeBoard(itemsObj){
