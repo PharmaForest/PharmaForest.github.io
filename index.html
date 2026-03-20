@@ -469,6 +469,10 @@
         <img src="./logo/SAShighlight.png" alt="SAShighlight">
         <div class="meta"><div class="title">SAShighlight</div><div class="hint">Visually Highlight Tool</div></div>
       </div>
+      <div class="logo" data-key="sasdogs">
+        <img src="./logo/SASDoGs.png" alt="SASDoGs">
+        <div class="meta"><div class="title">SASDoGs</div><div class="hint">SAS Documentation Generator system</div></div>
+      </div>
       <div class="logo" data-key="forest_navigator">
         <img src="./logo/forest_navigator.png" alt="forest_navigator">
         <div class="meta"><div class="title">Dr. Forest, Morio</div><div class="hint">Master Navigator of PharmaForest</div></div>
@@ -480,6 +484,10 @@
       <div class="logo" data-key="Rio">
         <img src="./logo/Rio.png" alt="Rio">
         <div class="meta"><div class="title">Rio</div><div class="hint">Support Navigator of PharmaForest</div></div>
+      </div>
+      <div class="logo" data-key="SASUKE">
+        <img src="./logo/SASUKE.png" alt="SASUKE">
+        <div class="meta"><div class="title">SASUKE</div><div class="hint">Support Navigator of PharmaForest</div></div>
       </div>
       <div class="logo" data-key="lady">
         <img src="./logo/SASPackageLady.png" alt="SASPackageLady">
@@ -501,7 +509,7 @@
       img: "./logo/pharmaforest.png",
       desc: 
       `
-      A collaborative repository of SAS packages for pharmaceutical industry, powered by PHUSE Japan OST (Open Source Technology) WG members—Hiroki Yamanobe, Yutaka Morioka, and Ryo Nakaya—showcasing the list of available packages. 
+      A collaborative repository of SAS packages for pharmaceutical industry, started by PHUSE Japan OST (Open Source Technology) WG members—Hiroki Yamanobe, Yutaka Morioka, and Ryo Nakaya—showcasing the list of available packages. 
 
       <br><br> PharmaForest is built on top of SAS Packages Framework(SPF), which was developed by Bartosz Jablonski. There are more packages in his repository SAS Packages Archive(SASPAC).<br><br>
       `,
@@ -529,6 +537,7 @@
       Rika Sakai        : test of Oncoplotter<br>
       Saikrishnareddy Yengannagari : sas_dataset_toon, defensivechk, GetCDISCCodelist, misc<br>
       Yoshiki Tokuda    : SAShighlight<br>
+      Ken Nakamatsu     : SASDoGs, spf-skills<br>
       `,
       badges: ["SAS Packages","Repository","Open-Source"],
       links: [{text:"PharmaForest", href:"https://github.com/PharmaForest"}, {text:"SPF", href:"https://github.com/yabwon/SAS_PACKAGES"},{text:"SASPAC", href:"https://github.com/SASPAC"}]
@@ -1075,6 +1084,18 @@
       badges: ["ODS Graphics","Highlight","Output/Visualization","MIT"],
       links: [{text:"sashighlight", href:"https://github.com/PharmaForest/sashighlight"},{text:"Ask Dr.Forest", href:"https://chatgpt.com/g/g-699610471260819196be8f76e324dafa-dr-forest"}]
     },   
+    sasdogs: {
+      title: "SASDoGs",
+      img: "./logo/SASDoGs.png",
+      summary: "SAS Documentation Generator system - Generate document from SAS code with JupyterBook/Sphinx support and GitHub Pages automation",
+      license: "MIT",
+      authors: ["Ken Nakamatsu"],
+      maintainers: ["Ken Nakamatsu"],
+      features: ["Documentation generation for SAS code"],
+      macros: ["%collectFiles(), <br>%generateMD(), <br>%packageDoc()"],
+      badges: ["Documentation","Package","Other","MIT"],
+      links: [{text:"sasdogs", href:"https://github.com/PharmaForest/SASDoGs"},{text:"Ask Dr.Forest", href:"https://chatgpt.com/g/g-699610471260819196be8f76e324dafa-dr-forest"}]
+    },  
     forest_navigator: {
       title: "Dr. Forest, Morio",
       img: "./logo/forest_navigator.png",
@@ -1100,10 +1121,19 @@
       title: "Rio",
       img: "./logo/Rio.png",
       desc: `
-      Rio is our support navigator. She/He is a mysterious GPT assistant who can asnwer details of #31 and later packages. However, please understand that she/he is not speaking on behalf of our organization. You need to sign up to ChatGPT (at least a free user account) to talk to her/him. See more about her/his background.<br><br>
+      Rio is our support navigator. She/He is a mysterious GPT assistant who can asnwer details of #31 - #45 packages. However, please understand that she/he is not speaking on behalf of our organization. You need to sign up to ChatGPT (at least a free user account) to talk to her/him. See more about her/his background.<br><br>
       `,
       badges: ["PharmaForest","Navigator","GPTs assistant"],
       links: [{text:"Background", href:"https://github.com/PharmaForest/.github/blob/main/Rio_background.md"}, {text:"Ask Rio", href:"https://chatgpt.com/g/g-69961574d1d48191bf402340734acf25-rio"}]
+    },
+      SASUKE: {
+      title: "SASUKE",
+      img: "./logo/SASUKE.png",
+      desc: `
+      SASUKE is our support navigator. He is a mysterious GPT assistant who can asnwer details of #46 - #60 packages. However, please understand that he is not speaking on behalf of our organization. You need to sign up to ChatGPT (at least a free user account) to talk to him. See more about his background.<br><br>
+      `,
+      badges: ["PharmaForest","Navigator","GPTs assistant"],
+      links: [{text:"Background", href:"https://github.com/PharmaForest/.github/blob/main/SASUKE_background.md"}, {text:"Ask SASUKE", href:"https://chatgpt.com/g/g-69bda538e5c88191b00e804a5984a03a-sasuke"}]
     },
       lady: {
       title: "SAS Package Lady (Oba-chan)",
@@ -1195,6 +1225,8 @@ const layoutMap = {
   sARDenMTS:       {x: 260, y: 851, scale: 0.6},
   dataset_maker:  {x: 370, y: 854, scale: 0.6},
   sashighlight:   {x: 476, y: 854, scale: 0.62},
+
+  sasdogs:        {x: 96, y: 942, scale: 0.6},
 };
 
 function buildFreeBoard(itemsObj){
