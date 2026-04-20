@@ -1,0 +1,261 @@
+  :root{
+    --stage-w: 500px;   /* キャンバス幅(px) */
+    --stage-h: 600px;    /* キャンバス初期高さ(px) - 後でJSで上書き可 */
+    --logo-size: 140px; /* ロゴの一辺（px） */
+    --left-width: 33vw; /* ← 追加：左の幅を明示（元々未定義） */
+  }
+
+    *{ box-sizing: border-box; }
+    body{
+      margin:0; background:#0f0f11; color:#eaeaea; font-family:system-ui, sans-serif; height:100vh; overflow:hidden;
+    }
+    .layout{
+      display:flex; height:100vh; gap:0; 
+    }
+    /* 左：縦スクロール列 */
+    .left{
+      width:var(--left-width); border-right:1px solid #222; position:relative; background:#111;
+    }
+    .left .logo{ cursor: pointer; }
+    .carousel{
+      display:flex; flex-direction:column;
+      overflow-y:auto; height:100%; padding:40px 24px;
+      scroll-snap-type: none;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      touch-action: pan-y;                 /* ← スマホでネイティブ縦スクロール */
+      overscroll-behavior-y: contain;      /* ← iOS/Androidで過剰な弾み防止 */
+    }
+    /* スクロール中は重いトランジションを殺して滑らかに */
+    .carousel.is-scrolling .logo{
+      transition: none !important;
+      box-shadow: none !important;
+    }
+
+    .logo{
+      flex:0 0 auto; width:100%; max-width:520px; height:var(--card);
+      margin: -10px auto 22px; /* ちょい重なり感 */
+      background:#232326; border-radius:20px; scroll-snap-align:center;
+      display:flex; align-items:center; gap:16px; padding:16px 18px;
+      transition: transform .25s, box-shadow .25s, background .25s;
+      box-shadow:0 0 0 rgba(0,0,0,0);
+      border:1px solid #2b2b2f;
+    }
+    .logo:hover{ transform:scale(0.80); }
+    .logo.active{
+      transform:scale(1.1);
+      box-shadow: 0 0 15px rgba(0, 170, 255, 0.8), /* 外側に青く発光 */
+                  0 0 30px rgba(0, 170, 255, 0.5); /* さらに外に柔らかく */
+      border: 2px solid rgba(0, 170, 255, 0.9);    /* 枠線も青く */
+      z-index:5;
+    }
+    .logo img{
+      width:160px; height:160px; object-fit:contain; flex:0 0 auto; filter:drop-shadow(0 2px 8px rgba(0,0,0,.3));
+      border-radius:16px; background:#232326;
+    }
+    .logo .meta{
+      min-width:0; display:flex; flex-direction:column; gap:8px;
+    }
+    .logo .title{
+      font-weight:700; font-size:18px; line-height:1.2; color:#fff; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+    }
+    .logo .hint{ font-size:12px; color:#9aa0a6; }
+    /* 右：詳細 */
+    .right{
+      flex:1; padding:32px 40px; overflow:auto; position:relative;
+     /* background: radial-gradient(800px 400px at 20% 10%, rgba(35,35,45,.28), transparent 60%) #0f0f11;*/
+       /* 背景画像を指定 */
+    background-image: url('./logo/picture_pharmaforest.png');
+
+    /* 背景の表示方法 */
+    background-size: cover;       /* 全体に拡大縮小して表示 */
+    background-position: center;  /* 中央寄せ */
+    background-repeat: no-repeat; /* 繰り返さない */
+    }
+    .panel{
+      max-width:1100px; margin:0 auto;
+      padding:28px 28px 32px; border:1px solid #2b2b2f; border-radius:20px; background: rgba(20, 20, 24, 0.7);
+      box-shadow:0 10px 30px rgba(0,0,0,.28);
+    }
+    .panel .hero{
+      display:flex; gap:20px; align-items:center; margin-bottom:16px;
+    }
+    .panel .hero img{
+      width:96px; height:96px; object-fit:contain; background:#1b1b20; border-radius:16px; padding:8px;
+      border:1px solid #2b2b2f;
+    }
+    .panel h1{ margin:0; font-size:24px; }
+    .panel .badges{ display:flex; gap:8px; margin:8px 0 4px; flex-wrap:wrap; }
+    .badge{
+      font-size:12px; padding:4px 8px; border-radius:999px; border:1px solid #3b3b42; color:#cfd3dc; background:#1a1a1f;
+    }
+    .panel p{ color:#cfd3dc; line-height:1.7; }
+    .panel a{ color:#8ab4ff; text-decoration:none; }
+    .panel a:hover{ text-decoration:underline; }
+    .panel .cta{
+      margin-top:16px; display:flex; gap:10px; flex-wrap:wrap;
+    }
+    .btn{
+      padding:10px 14px; border-radius:12px; border:1px solid #3b3b42; background:#1d1d22; color:#eaeaea; text-decoration:none;
+      display:inline-flex; align-items:center; gap:8px;
+    }
+    .btn:hover{ background:#23232a; }
+  
+    /* 右上固定のカウンターボックス */
+    .counter-widget{
+      position:absolute;
+      top:12px;
+      right:12px;
+      z-index:50;
+      background: rgba(20,20,24,.6);
+      border:1px solid #2b2b2f;
+      border-radius:12px;
+      padding:6px 8px;
+      backdrop-filter: blur(6px);
+    }
+    .counter-widget img{
+      display:block;
+      margin:0;
+      padding:0;
+      border:0;
+      vertical-align:bottom;
+    }
+
+    /* レスポンシブ（幅が狭い時は縦積み） */
+    /* タブレット以下は縦積みレイアウトにする */
+    @media (max-width: 980px){
+      .layout{
+        flex-direction: column;      
+        height: 100dvh;              /* モバイルのURLバー対策 */
+        min-height: 100vh;           /* 古端末フォールバック */
+      }
+
+      .left{
+        width: 100%;
+        height: 35vh;                 /* 上のリストを薄めに */
+        border-right: none;
+        border-bottom: 1px solid #222;
+        min-height: 0;                /* 内部スクロール有効化の定番 */
+      }
+
+      .right{
+        flex: 1 1 auto;               /* 残りを全部使う */
+        min-height: 0;                /* 内部スクロール可に */
+        overflow: auto;               /* 右パネルだけスクロール */
+        padding: 20px 16px;
+        padding-bottom: calc(24px + env(safe-area-inset-bottom, 0px)); /* 下バーに隠れない */
+      }
+
+      /* 右パネルの末尾に見えない余白（終端が隠れないように） */
+      .panel::after{
+        content: "";
+        display: block;
+        height: calc(24px + env(safe-area-inset-bottom, 0px));
+      }
+
+      /* ちょっと縮小系 */
+      :root{ --card: 160px; }
+      .panel{ max-width: 760px; padding: 20px; border-radius: 14px; }
+      .panel .hero img{ width: 72px; height: 72px; }
+      .badge{ font-size: 11px; padding: 3px 7px; }
+      .logo{ height: var(--card); padding: 12px 14px; gap: 12px; }
+      .logo img{ width: 120px; height: 120px; }
+    }
+
+    /* スマホはさらにコンパクト＆説明グリッド1列化 */
+    @media (max-width: 600px){
+      #panelDesc .info-grid{
+        grid-template-columns: 1fr;
+        gap: 6px 0;
+      }
+      #panelDesc img{ max-width: 90% !important; }
+      .panel h1{ font-size: 20px; }
+      .btn{ padding: 10px 12px; font-size: 14px; }
+    }
+    @media (hover: hover) and (pointer: fine){
+      .logo:hover{ transform: scale(1.06); } /* ←ホバー時の拡大 */
+    }
+
+    #panelDesc .info { display:flex; flex-direction:column; gap:12px; }
+    #panelDesc .summary { margin:0; color:#cfd3dc; line-height:1.7; }
+
+    #panelDesc .info-grid{
+      display:grid;
+      grid-template-columns: 160px 1fr; /* ← ラベル列幅はここで調整 */
+      gap: 8px 16px;                    /* 行間 / 列間 */
+      align-items:start;
+    }
+
+    #panelDesc .label{
+      color:#9aa0a6;
+      font-size:12px;
+      font-weight:600;
+      letter-spacing:.2px;
+    }
+
+    #panelDesc .value{
+      color:#eaeaea;
+      line-height:1.7;
+      min-width:0; /* 長文の折返し安定化 */
+      word-break: break-word;
+    }
+
+  /* 追加：チェックOFF時に薄くする */
+  .free.dim img{
+    filter: grayscale(1) brightness(.7) opacity(.35);
+    transition: filter .2s ease, opacity .2s ease;
+  }
+
+  /* 追加：フィルターUI */
+  .filters{
+    display:flex; gap:12px; flex-wrap:wrap;
+    margin: 4px 0 0;
+  }
+  .filters label{
+    display:inline-flex; gap:8px; align-items:center;
+    font-size:14px; background:#1a1a1f; border:1px solid #3b3b42;
+    padding:8px 12px; border-radius:999px; cursor:pointer;
+  }
+  .filters input{ accent-color:#39a0ff; }
+
+  /* ── Honeycomb grid ───────────────────────────── */
+  .free-outer{
+    width:100%;
+    overflow:auto;           /* ステージが大きくなったらスクロール */
+    margin-bottom: clamp(16px, 2vw, 32px);
+    margin-top: 0;       /* もし余白があればゼロに */
+  }
+
+  .free-wrap{
+    position: relative;
+    margin: 12px auto 0;
+    width:  calc(var(--stage-w) * 1px);
+    height: calc(var(--stage-h) * 1px);
+    background: transparent;
+  }
+
+  .free{
+    position: absolute;
+    width: var(--logo-size);
+    height: var(--logo-size);
+    /* ← ここがpx固定（%は使わない） */
+    top:  calc(var(--y, 0) * 1px);
+    left: calc(var(--x, 0) * 1px);
+    transform: translate(-50%, -50%) scale(var(--scale, 1));
+  }
+
+  /* 画像は四角でOK。透明背景があるので視覚的な干渉なし */
+  .free img{
+    width: var(--logo-img-pct);
+    height: var(--logo-img-pct);
+    object-fit: contain;
+    -webkit-user-drag: none; user-select: none;
+  }
+
+  /* 重なった時の操作性確保：ホバーしたものを最前面に */
+  .free:hover{ transform: translate(-50%, -50%) scale(0.80); z-index: 10; }
+
+  /* スマホ時は少し詰めるなどの調整も可 */
+  @media (max-width: 600px){
+    .free-wrap{ aspect-ratio: 4/5; }
+  }
