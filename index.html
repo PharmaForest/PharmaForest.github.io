@@ -5,232 +5,23 @@
   <title>PharmaForest Gallery</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">  
   <link href="style.css" rel="stylesheet"/>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 <body>
 
 <div class="layout">
   <!-- 左：ロゴリスト（縦スクロール） -->
   <aside class="left">
-    <div class="carousel" id="carousel">
-      <!-- data-key は下の items[] と対応させる -->
-      <div class="logo" data-key="pharmaforest">
-        <img src="./logo/pharmaforest.png" alt="PharmaForest">
-        <div class="meta">
-          <div class="title">PharmaForest</div>
-          <div class="hint">Package Repository</div>
+    <div class="carousel" id="carousel" x-data="{ entries: navEntries }">
+      <template x-for="entry in entries" :key="entry.key">
+        <div class="logo" :data-key="entry.key">
+          <img :src="entry.img" :alt="entry.title">
+          <div class="meta">
+            <div class="title" x-text="entry.title"></div>
+            <div class="hint" x-text="entry.hint || ''"></div>
+          </div>
         </div>
-      </div>
-      <div class="logo" data-key="forester">
-        <img src="./logo/squirrel.png" alt="Forester">
-        <div class="meta">
-          <div class="title">Foresters</div>
-          <div class="hint">Contributors</div>
-        </div>
-      </div>
-      <div class="logo" data-key="oncoplotter">
-        <img src="./logo/oncoplotter.png" alt="OncoPlotter">
-        <div class="meta"><div class="title">OncoPlotter</div><div class="hint">Plot Tools for Oncology Area</div></div>
-      </div>
-      <div class="logo" data-key="sashash">
-        <img src="./logo/sashash.png" alt="sashash">
-        <div class="meta"><div class="title">sashash</div><div class="hint">Hash Tools</div></div>
-      </div>
-      <div class="logo" data-key="sas_dataset_json">
-        <img src="./logo/sas_dataset_json.png" alt="sas_dataset_json">
-        <div class="meta"><div class="title">SAS Dataset JSON</div><div class="hint">Dataset JSON Converter</div></div>
-      </div>
-      <div class="logo" data-key="saspacer">
-        <img src="./logo/saspacer.png" alt="saspacer">
-        <div class="meta"><div class="title">SASPACer</div><div class="hint">SAS Package Generator</div></div>
-      </div>
-      <div class="logo" data-key="misc">
-        <img src="./logo/misc.png" alt="misc">
-        <div class="meta"><div class="title">Misc</div><div class="hint">Miscellaneous Utilities</div></div>
-      </div>
-      <div class="logo" data-key="sas_faker">
-        <img src="./logo/sas_faker.png" alt="sas_faker">
-        <div class="meta"><div class="title">SAS_FAKER</div><div class="hint">Dummy Data Generator</div></div>
-      </div>
-      <div class="logo" data-key="saslogchecker">
-        <img src="./logo/saslogchecker.png" alt="saslogchecker">
-        <div class="meta"><div class="title">SASLogChecker</div><div class="hint">Log Checking Utility</div></div>
-      </div>
-      <div class="logo" data-key="sas_compare">
-        <img src="./logo/sas_compare.png" alt="sas_compare">
-        <div class="meta"><div class="title">SAS_Compare</div><div class="hint">Compare Support Tools</div></div>
-      </div>
-      <div class="logo" data-key="rtfcreator">
-        <img src="./logo/rtfcreator.png" alt="rtfcreator">
-        <div class="meta"><div class="title">RTF Creator</div><div class="hint">RTF Creator</div></div>
-      </div>
-      <div class="logo" data-key="shutter_chance">
-        <img src="./logo/shutter_chance.png" alt="shutter_chance">
-        <div class="meta"><div class="title">Shutter Chance</div><div class="hint">Snapshot Tools</div></div>
-      </div>
-      <div class="logo" data-key="devil">
-        <img src="./logo/devil.png" alt="devil">
-        <div class="meta"><div class="title">Devil</div><div class="hint">Playful Ideas for a Break</div></div>
-      </div>
-      <div class="logo" data-key="xattr_kit">
-        <img src="./logo/xattr_kit.png" alt="xattr_kit">
-        <div class="meta"><div class="title">xattr Kit</div><div class="hint">Extended Attributes Toolkit</div></div>
-      </div>
-      <div class="logo" data-key="cloak">
-        <img src="./logo/cloak.png" alt="cloak">
-        <div class="meta"><div class="title">Cloak</div><div class="hint">Check-in/Check-out Storekeeper</div></div>
-      </div>
-      <div class="logo" data-key="vis_review_kit">
-        <img src="./logo/vis_review_kit.png" alt="vis_review_kit">
-        <div class="meta"><div class="title">Vis Review Kit</div><div class="hint">Visual Review Toolkit</div></div>
-      </div>
-      <div class="logo" data-key="odstable_layoutshowcase">
-        <img src="./logo/odstable_layoutshowcase.png" alt="odstable_layoutshowcase">
-        <div class="meta"><div class="title">ODSTable Layout Showcase</div><div class="hint">Showcase for ODSTable Layouts</div></div>
-      </div>
-      <div class="logo" data-key="maxims4sas">
-        <img src="./logo/maxims4sas.png" alt="maxims4sas">
-        <div class="meta"><div class="title">maxims4sas</div><div class="hint">Best Practices for SAS</div></div>
-      </div>
-      <div class="logo" data-key="laglead">
-        <img src="./logo/laglead.png" alt="laglead">
-        <div class="meta"><div class="title">laglead</div><div class="hint">Dynamic lead/lag value access</div></div>
-      </div>
-      <div class="logo" data-key="ctcae5_grader">
-        <img src="./logo/ctcae5_grader.png" alt="ctcae5_grader">
-        <div class="meta"><div class="title">ctcae5_grader</div><div class="hint">CTCAE Grader</div></div>
-      </div>
-      <div class="logo" data-key="love_matrix">
-        <img src="./logo/love_matrix.png" alt="love_matrix">
-        <div class="meta"><div class="title">Love Matrix</div><div class="hint">Loving matrix via FCMP</div></div>
-      </div>
-      <div class="logo" data-key="SASPACerShiny">
-        <img src="./logo/SASPACerShiny.png" alt="SASPACerShiny">
-        <div class="meta"><div class="title">SASPACerShiny</div><div class="hint">Shiny App of SASPACer</div></div>
-      </div>
-      <div class="logo" data-key="change_tracer_dog">
-        <img src="./logo/change_tracer_dog.png" alt="change_tracer_dog">
-        <div class="meta"><div class="title">Change Tracer Dog</div><div class="hint">Change Tracer Macros</div></div>
-      </div>
-      <div class="logo" data-key="yaml_writer">
-        <img src="./logo/yaml_writer.png" alt="yaml_writer">
-        <div class="meta"><div class="title">YAML Writer</div><div class="hint">YAML Generation Tool</div></div>
-      </div>
-      <div class="logo" data-key="adamski">
-        <img src="./logo/adamski.png" alt="adamski">
-        <div class="meta"><div class="title">Adamski</div><div class="hint">Adam Creation Tool</div></div>
-      </div>
-      <div class="logo" data-key="RWDExpress">
-        <img src="./logo/RWDExpress.png" alt="RWDExpress">
-        <div class="meta"><div class="title">RWD Express</div><div class="hint">RWD handling toolkit</div></div>
-      </div>
-      <div class="logo" data-key="freqsum">
-        <img src="./logo/freqsum.png" alt="freqsum">
-        <div class="meta"><div class="title">freqsum</div><div class="hint">Frequency and Summary Tool</div></div>
-      </div>
-      <div class="logo" data-key="qc_cat_referee">
-        <img src="./logo/qc_cat_referee.png" alt="qc_cat_referee">
-        <div class="meta"><div class="title">QC Cat Referee</div><div class="hint">toolkit for automated data quality control</div></div>
-      </div>
-      <div class="logo" data-key="SASToolbox">
-        <img src="./logo/SASToolbox.png" alt="SASToolbox">
-        <div class="meta"><div class="title">SASToolbox</div><div class="hint">Toolbox to handle files all at once</div></div>
-      </div>
-      <div class="logo" data-key="trial_flow">
-        <img src="./logo/trial_flow.png" alt="trial_flow">
-        <div class="meta"><div class="title">Trial Flow</div><div class="hint">Macros to create flow diagrams</div></div>
-      </div>
-      <div class="logo" data-key="valivali">
-        <img src="./logo/valivali.png" alt="valivali">
-        <div class="meta"><div class="title">Valivali</div><div class="hint">Toolbox for validation</div></div>
-      </div>
-      <div class="logo" data-key="mergex">
-        <img src="./logo/mergex.png" alt="mergex">
-        <div class="meta"><div class="title">Mergex</div><div class="hint">Merge methods for non-standard situations</div></div>
-      </div>
-      <div class="logo" data-key="basketMiningKit">
-        <img src="./logo/basketMiningKit.png" alt="basketMiningKit">
-        <div class="meta"><div class="title">Basket Mining Kit</div><div class="hint"> Package for Association analysis</div></div>
-      </div>
-      <div class="logo" data-key="datacut_sas">
-        <img src="./logo/datacut_sas.png" alt="datacut_sas">
-        <div class="meta"><div class="title">Datacut_SAS</div><div class="hint">Data Cutting Tool</div></div>
-      </div>
-      <div class="logo" data-key="retro_spell_check">
-        <img src="./logo/retro_spell_check.png" alt="retro_spell_check">
-        <div class="meta"><div class="title">Retro_Spell_Check</div><div class="hint">Batch Spell Verifier</div></div>
-      </div>
-      <div class="logo" data-key="sas_dataset_toon">
-        <img src="./logo/sas_dataset_toon.png" alt="sas_dataset_toon">
-        <div class="meta"><div class="title">sas_dataset_toon</div><div class="hint">Toon generator</div></div>
-      </div>
-      <div class="logo" data-key="defensivechk">
-        <img src="./logo/defensivechk.png" alt="defensivechk">
-        <div class="meta"><div class="title">defensivechk</div><div class="hint">Defensive checks macros</div></div>
-      </div>
-      <div class="logo" data-key="GetCDISCCodelist">
-        <img src="./logo/GetCDISCCodelist.png" alt="GetCDISCCodelist">
-        <div class="meta"><div class="title">GetCDISCCodelist</div><div class="hint">Get CDISC Codelist</div></div>
-      </div>
-      <div class="logo" data-key="kpi_viz_toolbox">
-        <img src="./logo/kpi_viz_toolbox.png" alt="kpi_viz_toolbox">
-        <div class="meta"><div class="title">KPI Viz Toolbox</div><div class="hint">KPI Visualization Toolbox</div></div>
-      </div>
-      <div class="logo" data-key="outlier_screening">
-        <img src="./logo/outlier_screening.png" alt="outlier_screening">
-        <div class="meta"><div class="title">Outlier Screening</div><div class="hint">Outlier screening tools</div></div>
-      </div>
-      <div class="logo" data-key="sARDen">
-        <img src="./logo/sARDen.png" alt="sARDen">
-        <div class="meta"><div class="title">sARDen</div><div class="hint">ARD Developer</div></div>
-      </div>
-      <div class="logo" data-key="sARDenX">
-        <img src="./logo/sARDenX.png" alt="sARDenX">
-        <div class="meta"><div class="title">sARDenX</div><div class="hint">Extended ARD Developer</div></div>
-      </div>
-      <div class="logo" data-key="sARDenMTS">
-        <img src="./logo/sARDenMTS.png" alt="sARDenMTS">
-        <div class="meta"><div class="title">sARDenMTS</div><div class="hint">ARD Metadata Manager</div></div>
-      </div>
-      <div class="logo" data-key="corr">
-        <img src="./logo/corr.png" alt="corr">
-        <div class="meta"><div class="title">corr</div><div class="hint">Association Analysis Tools</div></div>
-      </div>
-      <div class="logo" data-key="sas2typst_report">
-        <img src="./logo/sas2typst_report.png" alt="sas2typst_report">
-        <div class="meta"><div class="title">sas2typst_report</div><div class="hint">Typst Report Generator</div></div>
-      </div>
-      <div class="logo" data-key="dataset_maker">
-        <img src="./logo/dataset_maker.png" alt="dataset_maker">
-        <div class="meta"><div class="title">dataset_maker</div><div class="hint">Dataset Maker</div></div>
-      </div>
-      <div class="logo" data-key="sashighlight">
-        <img src="./logo/SAShighlight.png" alt="SAShighlight">
-        <div class="meta"><div class="title">SAShighlight</div><div class="hint">Visually Highlight Tool</div></div>
-      </div>
-      <div class="logo" data-key="sasdogs">
-        <img src="./logo/SASDoGs.png" alt="SASDoGs">
-        <div class="meta"><div class="title">SASDoGs</div><div class="hint">SAS Documentation Generator system</div></div>
-      </div>
-      <div class="logo" data-key="forest_navigator">
-        <img src="./logo/forest_navigator.png" alt="forest_navigator">
-        <div class="meta"><div class="title">Dr. Forest, Morio</div><div class="hint">Master Navigator of PharmaForest</div></div>
-      </div>
-      <div class="logo" data-key="apple">
-        <img src="./logo/apple.png" alt="apple">
-        <div class="meta"><div class="title">Dr. Apple</div><div class="hint">Support Navigator of PharmaForest</div></div>
-      </div>
-      <div class="logo" data-key="Rio">
-        <img src="./logo/Rio.png" alt="Rio">
-        <div class="meta"><div class="title">Rio</div><div class="hint">Support Navigator of PharmaForest</div></div>
-      </div>
-      <div class="logo" data-key="SASUKE">
-        <img src="./logo/SASUKE.png" alt="SASUKE">
-        <div class="meta"><div class="title">SASUKE</div><div class="hint">Support Navigator of PharmaForest</div></div>
-      </div>
-      <div class="logo" data-key="lady">
-        <img src="./logo/SASPackageLady.png" alt="SASPackageLady">
-        <div class="meta"><div class="title">SAS Package Lady (Oba-chan) </div><div class="hint">Diner auntie nearby PharmaForest</div></div>
-      </div>
+      </template>
     </div>
   </aside>
 
@@ -238,8 +29,15 @@
   <main class="right" id="rightPanel">
   </main>
 </div>
+<script src="repositories.js"></script>
 <script src="data.js"></script>
-<script src="script.js"></script>
+<script>
+  document.addEventListener('alpine:initialized', () => {
+    const script = document.createElement('script');
+    script.src = 'script.js';
+    document.body.appendChild(script);
+  }, { once: true });
+</script>
 
 </body>
 </html>
