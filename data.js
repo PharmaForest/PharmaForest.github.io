@@ -23,19 +23,31 @@
 
       Bartosz Jablonski : Developer of SAS Packages Framework (SPF) and SAS Packages Archive (SASPAC).<br><br>
 
-      Hiroki Yamanobe   : Co-founder and administrator of PharmaForest<br>
-      Yutaka Morioka    : Co-founder and administrator of PharmaForest<br>
-      Ryo Nakaya        : Co-founder and administrator of PharmaForest<br>
-      Sharad Chhetri    : Project member of PharmaForest<br><br>
+      PharmaForest <br><br>
+      Hiroki Yamanobe   : Co-founder and administrator<br>
+      Yutaka Morioka    : Co-founder and administrator<br>
+      Ryo Nakaya        : Co-founder and administrator<br>
+      Sharad Chhetri    : Administrator<br><br>
+      
+      Manivannan Mathialagan  : Project member<br>
+      Sowmya Kukudapu         : Project member<br>
+      Madhura                 : Project member<br>
+      Ashwini Shanbhogue      : Project member<br>
+      Bhargav Koduru          : Project member<br>
+      Ken Nakamatsu           : Project member, SASDoGs, spf-skills<br>
+      Abhishek                : Project member<br>
+      Akshay                  : Project member<br>
+      Venkatesh               : Project member<br>
+      Uma                     : Project member<br>
+      Aris Barbieri           : Project member<br><br>
 
-      Miyuki Aso        : devil(%sudoku_solver)<br>
-      Akira Matsuzawa   : devil(%hanabi)<br>
-      Teruko Narusawa   : RWDExpress<br>
+      Miyuki Aso                        : devil(%sudoku_solver)<br>
+      Akira Matsuzawa                   : devil(%hanabi)<br>
+      Teruko Narusawa                   : RWDExpress<br>
       Shingo Suzuki and SAS Japan folks : SASToolbox<br>
-      Rika Sakai        : test of Oncoplotter<br>
-      Saikrishnareddy Yengannagari : sas_dataset_toon, defensivechk, GetCDISCCodelist, misc<br>
-      Yoshiki Tokuda    : SAShighlight<br>
-      Ken Nakamatsu     : SASDoGs, spf-skills<br>
+      Rika Sakai                        : test of Oncoplotter<br>
+      Saikrishnareddy Yengannagari      : sas_dataset_toon, defensivechk, GetCDISCCodelist, misc<br>
+      Yoshiki Tokuda                    : SAShighlight<br>
       `,
       badges: ["SAS Packages","Repository","Open-Source"],
       links: [{text:"PharmaForest", href:"https://github.com/PharmaForest"}, {text:"SPF", href:"https://github.com/yabwon/SAS_PACKAGES"},{text:"SASPAC", href:"https://github.com/SASPAC"}]
