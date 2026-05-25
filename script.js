@@ -23,6 +23,56 @@
       </div>`;
   }
 
+function normalizeSearchText(text){
+  return String(text || "")
+    .normalize("NFKC")
+    .toLowerCase()
+    .replace(/[\u2010-\u2015]/g, "-")
+    .replace(/[^\p{L}\p{N}]+/gu, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function escapeAttr(text){
+  return String(text || "")
+    .replace(/&/g, "&amp;")
+    .replace(/"/g, "&quot;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+}
+
+function extractSearchKeywords(item){
+  const raw = [
+    item.title || "",
+    ...(item.features || []),
+  ].map(v => String(v));
+
+  const set = new Set();
+
+  raw.forEach(phrase => {
+    const normalizedPhrase = normalizeSearchText(phrase);
+    if (!normalizedPhrase) return;
+
+    set.add(normalizedPhrase);
+
+    const words = normalizedPhrase.split(' ').filter(Boolean);
+    words.forEach(w => {
+      set.add(w);
+      if (w.endsWith('s') && w.length > 3) {
+        set.add(w.slice(0, -1));
+      } else if (w.length > 2) {
+        set.add(`${w}s`);
+      }
+    });
+
+    for (let i = 0; i < words.length - 1; i++) {
+      set.add(`${words[i]} ${words[i + 1]}`);
+    }
+  });
+
+  return Array.from(set);
+}
+
 
 function buildFreeBoard(itemsObj){
   const keys = Object.keys(layoutMap).filter(k => itemsObj[k]?.img);
@@ -41,6 +91,11 @@ function buildFreeBoard(itemsObj){
   // 4カテゴリの抽出
   const TAGS = ["Output/Visualization","Data Utility","Checker","Other"];
 
+  // title + features キーワード候補（検索補助用）
+  const featureTokens = Array.from(new Set(
+    keys.flatMap(k => extractSearchKeywords(itemsObj[k]))
+  )).sort((a, b) => a.localeCompare(b));
+
   // ハニカムセル
   const cells = keys.map(k=>{
     const v = itemsObj[k];
@@ -51,8 +106,10 @@ function buildFreeBoard(itemsObj){
     const hoverAttr = v.hover ? ` data-hover="${v.hover}"` : "";
     const tags = (v.badges||[]).filter(b => TAGS.includes(b));
     const tagAttr = `data-tags="${tags.join('|')}"`;
+    const normalizedFeatures = extractSearchKeywords(v).join(" ");
+    const featureAttr = `data-features="${escapeAttr(normalizedFeatures)}"`;
     return `
-      <a class="free" ${style} ${tagAttr} href="${href}" target="_blank" rel="noopener" title="${v.title||k}">
+      <a class="free" ${style} ${tagAttr} ${featureAttr} href="${href}" target="_blank" rel="noopener" title="${v.title||k}">
         <span class="hex"><img src="${v.img}"${hoverAttr} alt="${v.title||k}"></span>
       </a>`;
   }).join('');
@@ -65,6 +122,21 @@ function buildFreeBoard(itemsObj){
       <label><input type="radio" name="cat" value="Data Utility"> Data Utility</label>
       <label><input type="radio" name="cat" value="Checker"> Checker</label>
       <label><input type="radio" name="cat" value="Other"> Other</label>
+    </div>`;
+
+  const featureSearchHTML = `
+    <div class="feature-search" id="featureSearchWrap">
+      <label for="featureSearch" class="feature-search-label">Search by keyword</label>
+      <input
+        id="featureSearch"
+        type="search"
+        list="featureKeywords"
+        placeholder="e.g. CDISC, YAML, Visual Review"
+        autocomplete="off"
+      >
+      <datalist id="featureKeywords">
+        ${featureTokens.map(t => `<option value="${escapeAttr(t)}"></option>`).join('')}
+      </datalist>
     </div>`;
 
   return `
@@ -82,6 +154,7 @@ function buildFreeBoard(itemsObj){
       <div id="panelDesc">${items['pharmaforest'].desc || ''}</div>
 
       ${radiosHTML}            <!-- ← ここがハニカム“上” -->
+      ${featureSearchHTML}
 
       <div class="free-outer">
         <div class="free-wrap" ${wrapStyle}>
@@ -117,21 +190,32 @@ function attachCategoryRadios(){
   const panel = document.getElementById('panel');
   const radios = panel.querySelectorAll('#filters input[type="radio"][name="cat"]');
   const icons  = panel.querySelectorAll('.free');
+  const featureSearch = panel.querySelector('#featureSearch');
 
   function apply(){
     const picked = panel.querySelector('#filters input[name="cat"]:checked')?.value || 'All';
-    if (picked === 'All'){
-      icons.forEach(a => a.classList.remove('dim'));
-      return;
-    }
+    const query = normalizeSearchText(featureSearch?.value || '');
+    const queryTokens = query ? query.split(' ') : [];
+
     icons.forEach(a=>{
       const tags = (a.getAttribute('data-tags') || '').split('|').filter(Boolean);
-      const matched = tags.includes(picked);
+      const featureText = a.getAttribute('data-features') || '';
+      const featureTokens = featureText ? featureText.split(' ') : [];
+
+      const categoryMatched = picked === 'All' || tags.includes(picked);
+      const directMatched = !!query && featureText.includes(query);
+      const tokenMatched = queryTokens.length > 0 && queryTokens.every(qt =>
+        featureTokens.some(ft => ft.startsWith(qt) || ft.includes(qt))
+      );
+      const featureMatched = !query || directMatched || tokenMatched;
+      const matched = categoryMatched && featureMatched;
+
       a.classList.toggle('dim', !matched);  // 一致しないものだけグレー
     });
   }
 
   radios.forEach(r => r.addEventListener('change', apply));
+  featureSearch?.addEventListener('input', apply);
   apply(); // 初回
 }
 

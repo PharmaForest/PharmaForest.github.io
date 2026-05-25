@@ -218,6 +218,31 @@
   }
   .filters input{ accent-color:#39a0ff; }
 
+  .feature-search{
+    margin: 10px 0 8px;
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+    max-width: 520px;
+  }
+  .feature-search-label{
+    font-size: 13px;
+    color:#cfd3dc;
+  }
+  .feature-search input{
+    width:100%;
+    border:1px solid #3b3b42;
+    border-radius:10px;
+    background:#141419;
+    color:#eaeaea;
+    padding:10px 12px;
+    outline:none;
+  }
+  .feature-search input:focus{
+    border-color:#39a0ff;
+    box-shadow:0 0 0 2px rgba(57,160,255,.22);
+  }
+
   /* ── Honeycomb grid ───────────────────────────── */
   .free-outer{
     width:100%;
