@@ -644,7 +644,21 @@ const repositories = {
       badges: ["Documentation","Package","Other","MIT"],
       links: [{text:"sasdogs", href:"https://github.com/PharmaForest/SASDoGs"}, {navigatorKey: "askDrForest"}],
       layout: {x: 96, y: 942, scale: 0.6},
-    }
+    },
+    pharma_graph_gallery: {
+      title: "Pharma Graph Gallery",
+      img: "./logo/pharma_graph_gallery.png",
+      hint: "Pharmaceutical Graph Templates",
+      summary: "Pharma_Graph_Gallery is a SAS package that provides a gallery of reusable graph SAS-code for pharmaceutical and clinical trial data visualization.",
+      license: "MIT",
+      authors: ["Yutaka Morioka"],
+      maintainers: ["Yutaka Morioka"],
+      features: ["graph", "templates", "gallery"],
+      macros: ["%pharma_graph_gallery()","%sg001() ~ %sg040()"],
+      badges: ["Graph","Output/Visualization","MIT"],
+      links: [{text:"pharma_graph_gallery", href:"https://github.com/PharmaForest/pharma_graph_gallery"}, {navigatorKey: "askDrForest"}],
+      layout: {x: 205, y: 943, scale: 0.64},
+    },
 }
 
 // Next layouts to be added:
