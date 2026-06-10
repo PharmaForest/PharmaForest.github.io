@@ -640,7 +640,7 @@ const repositories = {
       authors: ["Ken Nakamatsu"],
       maintainers: ["Ken Nakamatsu"],
       features: ["Documentation", "SAS code", "SAS Packages", "GitHub Pages"],
-      macros: ["%collectFiles()", "%generateMD()", "%packageDoc()"],
+      macros: ["%collectFiles()", "%generateMD()", "%packageDoc()", "%generateNB()"],
       badges: ["Documentation","Package","Other","MIT"],
       links: [{text:"sasdogs", href:"https://github.com/PharmaForest/SASDoGs"}, {navigatorKey: "askDrForest"}],
       layout: {x: 96, y: 942, scale: 0.6},
