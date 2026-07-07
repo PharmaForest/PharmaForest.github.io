@@ -659,6 +659,20 @@ const repositories = {
       links: [{text:"pharma_graph_gallery", href:"https://github.com/PharmaForest/pharma_graph_gallery"}, {navigatorKey: "askDrForest"}],
       layout: {x: 205, y: 943, scale: 0.64},
     },
+    rich_kaplan_meier_plot: {
+      title: "Rich Kaplan-Meier Plot",
+      img: "./logo/rich_kaplan_meier_plot.png",
+      hint: "Enhanced Kaplan-Meier Plot for Survival Analysis",
+      summary: "This package provides a Rich Kaplan-Meier plot for SAS, enhancing standard survival curves with censoring marks, event marks, standardized number-at-risk bands, and risk tables. It helps visualize survival probability and risk-set dynamics across up to four groups in an intuitive, presentation-ready format.",
+      license: "MIT",
+      authors: ["Yutaka Morioka"],
+      maintainers: ["Yutaka Morioka"],
+      features: ["graph", "survival analysis", "visualization", "Kaplan-Meier plot"],
+      macros: ["%rich_kaplan_meier_plot()"],
+      badges: ["Graph","Output/Visualization","MIT"],
+      links: [{text:"rich_kaplan_meier_plot", href:"https://github.com/PharmaForest/rich_kaplan_meier_plot"}, {navigatorKey: "askDrForest"}],
+      layout: {x: 314, y: 943, scale: 0.70},
+    },
 }
 
 // Next layouts to be added:
