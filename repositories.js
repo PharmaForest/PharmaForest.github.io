@@ -318,7 +318,9 @@ const repositories = {
       authors: ["PharmaForest"],
       maintainers: ["PharmaForest"],
       features: ["ADaM", "CDISC"],
-      macros: ["%derive_vars_dy()", "%derive_var_merged_exist_flag()", "%derive_var_age_years()", "%derive_locf_records()", "%derive_var_base()", "%derive_var_chg()", "%derive_var_obs_number()", "%derive_vars_aage()", "%derive_vars_joined()"],
+      macros: ["%derive_vars_dy()", "%derive_var_merged_exist_flag()", "%derive_var_age_years()", "%derive_locf_records()", "%derive_var_base()", "%derive_var_chg()", "%derive_var_obs_number()", "%derive_vars_aage()", "%derive_vars_joined()",
+        "%derive_basetype_records()","%derive_vars_cat()","%derive_vars_duration()"
+      ],
       badges: ["ADaM", "Data Utility","Apache-2.0"],
       links: [{text:"Adamski", href:"https://github.com/PharmaForest/adamski"}, {navigatorKey: "askDrForest"}],
       layout: {x: 260, y: 482, scale: 0.6},
