@@ -39,7 +39,9 @@
       Akshay                  : Project member<br>
       Venkatesh               : Project member<br>
       Uma                     : Project member<br>
-      Aris Barbieri           : Project member<br><br>
+      Aris Barbieri           : Project member<br>
+      Omega Muchabaiwa        : Project member<br>
+      Shravya P Rao           : Project member<br><br>
 
       Miyuki Aso                        : devil(%sudoku_solver)<br>
       Akira Matsuzawa                   : devil(%hanabi)<br>
