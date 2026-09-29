@@ -36,7 +36,7 @@ const repositories = {
       authors: ["Yutaka Morioka"],
       maintainers: ["Yutaka Morioka"],
       features: ["Dataset JSON"],
-      macros: ["%m_sas_to_json1_1()","%m_json1_1_to_sas()","%m_sas_to_ndjson1_1()","%m_ndjson1_1_to_sas()"],
+      macros: ["%m_sas_to_json1_1()","%m_json1_1_to_sas()","%m_sas_to_ndjson1_1()","%m_ndjson1_1_to_sas()","%m_ndjson1_1_to_sas_stream()"],
       badges: ["Dataset JSON","Data Utility","MIT"],
       links: [{text:"sas_dataset_json", href:"https://github.com/PharmaForest/sas_dataset_json"}, {navigatorKey: "askDrForest"}],
       layout: {x: 260, y: 100, scale: 0.6},
