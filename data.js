@@ -6,7 +6,7 @@
       hint: "Package Repository",
       desc: 
       `
-      A collaborative repository of SAS packages for pharmaceutical industry, started by PHUSE Japan OST (Open Source Technology) WG members—Hiroki Yamanobe, Yutaka Morioka, and Ryo Nakaya—showcasing the list of available packages. 
+      A collaborative repository of SAS packages for pharmaceutical industry, powered by PHUSE Data Visualization & Open-Source Technology(DVOST) Working Group. 
 
       <br><br> PharmaForest is built on top of SAS Packages Framework(SPF), which was developed by Bartosz Jablonski. There are more packages in his repository SAS Packages Archive(SASPAC).<br><br>
       `,
