@@ -676,6 +676,20 @@ const repositories = {
       links: [{text:"rich_kaplan_meier_plot", href:"https://github.com/PharmaForest/rich_kaplan_meier_plot"}, {navigatorKey: "askDrForest"}],
       layout: {x: 314, y: 943, scale: 0.70},
     },
+    mergeNSV: {
+      title: "mergeNSV",
+      img: "./logo/mergeNSV.png",
+      hint: "Merge Non-Standard Variables in SDTM",
+      summary: "mergeNSV is a dependency-free SAS macro package that merges SDTM non-standard variables from either SUPP<domain> (SDTMIG 3.x) or NS<domain> (SDTM v3.0/SDTMIG v4.0) into a domain through one consistent %merge_nsv() call. If no NSVs exist, it passes the domain through unchanged.",
+      license: "MIT",
+      authors: ["Saikrishnareddy Yengannagari"],
+      maintainers: ["Saikrishnareddy Yengannagari","Yutaka Morioka"],
+      features: ["SDTM", "non-standard variables", "SUPP<domain>", "NS<domain>"],
+      macros: ["%merge_nsv()"],
+      badges: ["SDTM","Non-Standard Variables","NSV","MIT"],
+      links: [{text:"mergeNSV", href:"https://github.com/PharmaForest/mergeNSV"}, {navigatorKey: "askDrForest"}],
+      layout: {x: 424, y: 943, scale: 0.59},
+    },
 }
 
 // Next layouts to be added:

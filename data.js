@@ -59,7 +59,7 @@
       <div>Teruko Narusawa</div><div>:</div><div>RWDExpress</div>
       <div>Shingo Suzuki and SAS Japan folks</div><div>:</div><div>SASToolbox</div>
       <div>Rika Sakai</div><div>:</div><div>test of Oncoplotter</div>
-      <div>Saikrishnareddy Yengannagari</div><div>:</div><div>sas_dataset_toon, defensivechk, GetCDISCCodelist, misc</div>
+      <div>Saikrishnareddy Yengannagari</div><div>:</div><div>sas_dataset_toon, defensivechk, GetCDISCCodelist, misc, mergeNSV</div>
       <div>Yoshiki Tokuda</div><div>:</div><div>SAShighlight</div>
       </div>
       `,
