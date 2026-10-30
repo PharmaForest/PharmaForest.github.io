@@ -50,6 +50,7 @@
       <div>Omega Muchabaiwa</div><div>:</div><div>Project member</div>
       <div>Shravya P Rao</div><div>:</div><div>Project member</div>
       <div>Paul Robertson</div><div>:</div><div>Project member</div>
+      <div>Dave Kestner</div><div>:</div><div>Project member</div>
       </div>
       <br>
 
