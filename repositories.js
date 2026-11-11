@@ -704,6 +704,20 @@ const repositories = {
       links: [{text:"StepTimeScope", href:"https://github.com/PharmaForest/StepTimeScope"}, {navigatorKey: "askDrForest"}],
       layout: {x: 530, y: 938, scale: 0.53},
     },
+    SAS_definer: {
+      title: "SAS_definer",
+      img: "./logo/sas_definer.png",
+      hint: "Create define.xml",
+      summary: "A SAS package to provide macros for creating a CDISC Define-XML file from an Excel metadata specification. The Excel spec format is based on the one in `Implementing CDISC Using SAS: An End-to-End Guide, Revised Second Edition`. The package converts an Excel spec into SAS metadata datasets and then writes Define-XML (version 2.0). %definexml() and its helper macros are based on the definexml macros by Katja Glass (PHUSE, MIT License, 2016), with modifications. Support for Define-XML 2.1, reverse conversion to Excel, and Analysis Results Metadata (ARM) is planned.",
+      license: "MIT",
+      authors: ["Ryo Nakaya"],
+      maintainers: ["PharmaForest"],
+      features: ["define.xml", "excel spec", "XML"],
+      macros: ["%createDefine()"],
+      badges: ["define.xml", "excel spec", "XML", "Other","MIT"],
+      links: [{text:"SAS_definer", href:"https://github.com/PharmaForest/sas_definer"}, {navigatorKey: "askDrForest"}],
+      layout: {x: 40, y: 1039, scale: 0.60},
+    },
 }
 
 // Next layouts to be added:
